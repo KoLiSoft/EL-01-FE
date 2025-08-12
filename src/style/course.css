@@ -1,0 +1,160 @@
+/* ================= HERO (chỉ dùng class của section) ================= */
+.hero-section-course {
+  padding: 80px 140px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url('../assets/img/background1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-left-course { flex: 1; max-width: 50%; }
+.hero-right-course { flex: 1; display: flex; justify-content: end; align-items: flex-end; }
+.hero-right-course img { max-width: 100%; height: auto; }
+
+.hero-subtitle-course {
+  font-family: 'Alex Brush', cursive;
+  font-size: 2rem;
+  color: #FF8800;
+}
+
+.hero-title-course {
+  font-size: 4rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #292C7A;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.hero-desc-course {
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(0,0,0,.42);
+  margin-bottom: 10px;
+}
+
+.hero-buttons-course { margin-top: 20px; }
+
+/* Nút riêng cho Hero (không dùng .btn toàn cục) */
+.hero-btn-primary {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #10146B;
+  color: #fff;
+  border: none;
+}
+.hero-btn-primary:hover { opacity: .95; }
+
+/* Breakpoints riêng cho Hero */
+@media (max-width: 1024px) {
+  .hero-section-course { padding: 50px 60px; }
+  .hero-title-course { font-size: 3.2rem; }
+}
+
+@media (max-width: 768px) {
+  .hero-section-course { flex-direction: column; padding: 40px 20px; text-align: center; }
+  .hero-left-course, .hero-right-course { max-width: 100%; }
+  .hero-right-course { margin-top: 24px; justify-content: center; }
+  .hero-title-course { font-size: 2.6rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-title-course { font-size: 2.2rem; }
+  .hero-subtitle-course { font-size: 1.6rem; }
+  .hero-btn-primary { width: 100%; }
+}
+
+.courses-section {
+  position: relative;
+  padding: 36px 0 72px;
+  overflow: hidden;
+}
+
+.courses-container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+.courses-subtitle {
+font-family: 'Alex Brush', cursive;
+  font-size: 2rem;
+  color: #FF8800;
+  text-align: center;
+  letter-spacing: .14em;
+  margin: 0 0 8px;
+
+}
+.courses-title {
+    font-family: 'Montserrat', sans-serif;
+  color: #292C7A;
+  text-align: center;
+  margin: 0;
+  font-size: clamp(28px, 4.5vw, 36px);
+  letter-spacing: .08em;
+}
+
+.courses-grid {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 22px 26px;
+}
+
+/* Card */
+.course-card {
+  background: #F6F7F9;
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(16,24,40,.06), 0 8px 30px rgba(54,68,171,.08);
+  border: 1px solid #eef2ff;
+  padding: 18px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(16,24,40,.08), 0 14px 38px rgba(54,68,171,.12);
+}
+/* So le 2 cột */
+.course-card:nth-child(2n) { margin-top: 22px; }
+
+.course-card__title {
+  color: #10146B;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.course-card__desc {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100px;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.course-card__actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+/* Nút riêng cho card */
+.course-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12.5px;
+  padding: 9px 12px;
+  border-radius: 999px;
+}
+.course-btn--primary { color: #fff; background: #10146B; }
+.course-btn--orange  { color: #fff; background: #FF8800; }
+
+/* Responsive riêng cho grid */
+@media (max-width: 992px) {
+  .courses-grid { grid-template-columns: 1fr; }
+  .course-card:nth-child(2n) { margin-top: 0; }
+}

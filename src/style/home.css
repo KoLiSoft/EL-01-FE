@@ -1,0 +1,386 @@
+.hero-section {
+padding: 80px 140px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 60px 100px; */
+  background-image: url('../assets/img/background1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+
+.hero-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #292C7A;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.hero-subtitle {
+  font-family: 'Alex Brush', cursive;
+  font-size: 2rem;
+  font-weight: normal;
+  color: #292C7A;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #0000006c;
+  margin-bottom: 10px;
+}
+
+.hero-slogan {
+  font-family: 'Alex Brush', cursive;
+  font-size: 2.5rem;
+  color: #292C7A;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.hero-slogan .highlight-orange {
+  color: #ff9900;
+  font-weight: bold;
+}
+.hero-slogan .second-line {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+
+}
+
+.hero-buttons .btn {
+  padding: 10px 20px;
+  margin-right: 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.primary {
+  font-family: 'Montserrat', sans-serif;
+  border: 1.5px solid #10146B;
+  background: white;
+  color: #10146B;
+  font-size: 1rem;
+}
+.btn.primary:hover {
+  background: #10146B;
+  color: white;
+}
+
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .hero-section {
+    padding: 50px 60px;
+  }
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .hero-slogan {
+    font-size: 1.8rem;
+    margin-left: 30px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    max-width: 100%;
+  }
+
+  .hero-right {
+    margin-top: 30px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-slogan {
+    margin-left: 0;
+    font-size: 1.6rem;
+  }
+
+  .hero-buttons .btn {
+    margin-bottom: 10px;
+  }
+}
+
+/* Mobile nhỏ (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .hero-slogan {
+    font-size: 1.3rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+/* thống kê */
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 10px 10px;
+  position: relative;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 1px;
+  background-color: #eee;
+}
+
+.stat-box {
+  flex: 1 1 200px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+.stat-box h2 {
+  font-size: 3.5rem;
+  color: #10146B;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  font-size: 0.95rem;
+  color: #10146B;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .stat-box {
+    flex: 1 1 40%; /* 2 cột */
+    margin: 20px 10px;
+  }
+
+  .stats-section::before {
+    width: 750px;
+  }
+}
+@media (max-width: 768px) {
+  .stats-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .stat-box {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .stats-section::before {
+    width: 700px;
+    top: 20px;
+  }
+}
+/* câu hỏi */
+.study-support-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 100px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.study-support-section::before{
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 1px;
+  background-color: #eee;
+}
+
+.support-left {
+  flex: 1;
+  text-align: center;
+}
+
+.support-left img {
+  max-width: 100%;
+  height: auto;
+}
+
+.support-right {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.support-title {
+  font-size: 2rem;
+  color: #10146B;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.support-subtitle {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.support-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.support-list li {
+  background-color: #f4f6fa;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.support-list li:hover {
+  background-color: #e8eef7;
+}
+
+.support-list li .desc {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.support-list li.active {
+  background-color: #e2edff;
+}
+
+.number-circle {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #ff9900;
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* giáo viên */
+.featured-teachers-section {
+  padding: 60px 80px;
+  background-image: url('../assets/img/Group\ 150.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.featured-teachers-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #0a0a5c;
+}
+
+.featured-teachers-section h2 span {
+  color: #ff9900;
+}
+
+.teacher-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.teacher-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.teacher-info p {
+  margin: 4px 0;
+}
+
+.teacher-card .btn {
+  margin-top: 15px;
+  background-color: #0a0a5c;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.teacher-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+.teacher-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 20px;
+  width: 280px;
+}
+.teacher-slider::-webkit-scrollbar {
+  display: none; /* Ẩn thanh cuộn */
+}
