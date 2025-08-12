@@ -17,18 +17,18 @@
 
 /* Nền xanh đậm nửa dưới */
 .featured-courses::after {
-        content: "";
         position: absolute;
         inset: auto 0 0 0;
         top: 65%;
-        background: var(--fc-navy);
         z-index: -1;
+        content: "";
+        background: var(--fc-navy);
 }
 
 .featured-courses .fc-container {
         max-width: 1200px;
-        margin: 0 auto;
         padding: 0 16px;
+        margin: 0 auto;
 }
 
 /* Heading 2 dòng */
@@ -60,23 +60,23 @@
 
 /* Card */
 .featured-courses .fc-card {
+        padding: 16px 18px 14px;
         background: var(--fc-card-bg);
+        border: 1px solid #eef2ff;
         border-radius: var(--fc-radius);
         box-shadow: var(--fc-shadow);
-        border: 1px solid #eef2ff;
-        padding: 16px 18px 14px;
 }
 .featured-courses .fc-card__head {
         display: flex;
+        gap: 12px;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
         margin-bottom: 6px;
 }
 .featured-courses .fc-title {
         display: flex;
-        align-items: center;
         gap: 8px;
+        align-items: center;
 }
 .featured-courses .fc-title h3 {
         margin: 0;
@@ -87,45 +87,45 @@
 .featured-courses .fc-dot {
         width: 10px;
         height: 10px;
-        border-radius: 50%;
         background: radial-gradient(circle at 30% 30%, #ff9ad1, #ff5280 70%);
+        border-radius: 50%;
         box-shadow: 0 0 0 3px #ffe6f0 inset;
 }
 .featured-courses .fc-rating {
-        color: var(--fc-star);
         font-size: 14px;
+        color: var(--fc-star);
         letter-spacing: 0.08em;
         white-space: nowrap;
 }
 .featured-courses .fc-desc {
-        color: var(--fc-muted);
+        margin: 0 0 8px;
         font-size: 14px;
         line-height: 1.55;
-        margin: 0 0 8px;
+        color: var(--fc-muted);
 }
 
 /* Meta list */
 .featured-courses .fc-meta {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 10px;
         display: grid;
         gap: 6px;
+        padding: 0;
+        margin: 0 0 10px;
+        list-style: none;
 }
 .featured-courses .fc-meta li {
         display: flex;
-        align-items: center;
         gap: 8px;
+        align-items: center;
         font-size: 14px;
         color: var(--fc-muted);
 }
 .featured-courses .fc-ico {
-        color: #6b7280;
         display: inline-flex;
+        color: #6b7280;
 }
 .featured-courses .fc-meta .label {
-        color: #334155;
         font-weight: 700;
+        color: #334155;
 }
 .featured-courses .fc-meta .value {
         margin-left: auto;
@@ -135,8 +135,8 @@
 /* Học phí */
 .featured-courses .fc-fee {
         display: flex;
-        align-items: center;
         gap: 8px;
+        align-items: center;
         padding-top: 8px;
         margin-top: 6px;
         border-top: 1px dashed #e6e9ff;
@@ -151,23 +151,23 @@
 
 /* CTA (đã scope theo section, không còn .btn global) */
 .featured-courses .btn {
-        appearance: none;
-        border: none;
-        cursor: pointer;
-        font-size: 13px;
         padding: 10px 14px;
+        font-size: 13px;
+        appearance: none;
+        cursor: pointer;
+        border: none;
         border-radius: 10px;
 }
 .featured-courses .btn-pill {
         border-radius: 999px;
 }
 .featured-courses .btn-dark {
-        background: #0a1556;
         color: #fff;
+        background: #0a1556;
 }
 .featured-courses .btn-orange {
-        background: var(--fc-brand);
         color: #fff;
+        background: var(--fc-brand);
 }
 .featured-courses .btn:focus-visible {
         outline: 3px solid rgba(255, 122, 0, 0.35);
@@ -190,8 +190,8 @@
 .featured-courses .fc-dots span {
         width: 10px;
         height: 10px;
-        border-radius: 50%;
         background: #e5e7eb;
+        border-radius: 50%;
         box-shadow: inset 0 0 0 2px rgba(10, 21, 86, 0.08);
 }
 .featured-courses .fc-dots span.active {
@@ -209,13 +209,13 @@
 }
 @media (max-width: 640px) {
         .featured-courses .fc-grid {
-                grid-auto-flow: column;
-                grid-auto-columns: 85%;
                 grid-template-columns: none;
+                grid-auto-columns: 85%;
+                grid-auto-flow: column;
+                padding-bottom: 6px;
                 overflow-x: auto;
                 scroll-snap-type: x mandatory;
                 scroll-padding-left: 16px;
-                padding-bottom: 6px;
         }
         .featured-courses .fc-card {
                 scroll-snap-align: start;
@@ -251,8 +251,8 @@
 
 .featured-courses .fc-slide {
         flex: 0 0 100%; /* mỗi trang = 100% chiều rộng container */
-        scroll-snap-align: start;
         padding: 0 4px; /* tí padding cho mũi tên không che card */
+        scroll-snap-align: start; /* tí padding cho mũi tên không che card */
 }
 
 .featured-courses .fc-slide-grid {
@@ -265,18 +265,18 @@
 .featured-courses .fc-arrow {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
         z-index: 3;
         width: 42px;
         height: 42px;
-        border-radius: 999px;
-        border: none;
-        cursor: pointer;
-        background: rgba(133, 133, 133, 0.95);
-        color: #10146b;
         font-size: 24px;
         line-height: 1;
+        color: #10146b;
+        cursor: pointer;
+        background: rgba(133, 133, 133, 0.95);
+        border: none;
+        border-radius: 999px;
         box-shadow: var(--fc-shadow);
+        transform: translateY(-50%);
 }
 .featured-courses .fc-arrow--left {
         left: -50px;
@@ -285,8 +285,8 @@
         right: -50px;
 }
 .featured-courses .fc-arrow[disabled] {
-        opacity: 0.35;
         cursor: default;
+        opacity: 0.35;
 }
 
 /* Dots dùng button thay vì span để click được */
@@ -299,10 +299,10 @@
 .featured-courses .fc-dot {
         width: 10px;
         height: 10px;
-        border-radius: 50%;
+        cursor: pointer;
         background: #e5e7eb;
         border: none;
-        cursor: pointer;
+        border-radius: 50%;
         box-shadow: inset 0 0 0 2px rgba(10, 21, 86, 0.08);
 }
 .featured-courses .fc-dot.active {

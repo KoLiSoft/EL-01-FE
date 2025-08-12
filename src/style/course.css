@@ -1,13 +1,13 @@
 /* ================= HERO (chỉ dùng class của section) ================= */
 .hero-section-course {
-        padding: 80px 140px 60px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 80px 140px 60px;
         background-image: url("../assets/img/background1.png");
         background-repeat: no-repeat;
-        background-size: cover;
         background-position: center;
+        background-size: cover;
 }
 
 .hero-left-course {
@@ -15,10 +15,10 @@
         max-width: 50%;
 }
 .hero-right-course {
-        flex: 1;
         display: flex;
-        justify-content: end;
+        flex: 1;
         align-items: flex-end;
+        justify-content: end;
 }
 .hero-right-course img {
         max-width: 100%;
@@ -32,18 +32,18 @@
 }
 
 .hero-title-course {
-        font-size: 4rem;
-        font-family: "Montserrat", sans-serif;
-        color: #292c7a;
-        font-weight: 700;
         margin: 10px 0;
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem;
+        font-weight: 700;
+        color: #292c7a;
 }
 
 .hero-desc-course {
-        font-size: 1rem;
-        font-family: "Montserrat", sans-serif;
-        color: rgba(0, 0, 0, 0.42);
         margin-bottom: 10px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1rem;
+        color: rgba(0, 0, 0, 0.42);
 }
 
 .hero-buttons-course {
@@ -53,12 +53,12 @@
 /* Nút riêng cho Hero (không dùng .btn toàn cục) */
 .hero-btn-primary {
         padding: 10px 20px;
-        border-radius: 6px;
         font-weight: 600;
+        color: #fff;
         cursor: pointer;
         background: #10146b;
-        color: #fff;
         border: none;
+        border-radius: 6px;
 }
 .hero-btn-primary:hover {
         opacity: 0.95;
@@ -85,8 +85,8 @@
                 max-width: 100%;
         }
         .hero-right-course {
-                margin-top: 24px;
                 justify-content: center;
+                margin-top: 24px;
         }
         .hero-title-course {
                 font-size: 2.6rem;
@@ -113,52 +113,52 @@
 
 .courses-container {
         max-width: 1200px;
-        margin: 0 auto;
         padding: 0 16px;
+        margin: 0 auto;
 }
 
 .courses-subtitle {
+        margin: 0 0 8px;
         font-family: "Alex Brush", cursive;
         font-size: 2rem;
         color: #ff8800;
         text-align: center;
         letter-spacing: 0.14em;
-        margin: 0 0 8px;
 }
 .courses-title {
+        margin: 0;
         font-family: "Montserrat", sans-serif;
+        font-size: clamp(28px, 4.5vw, 36px);
         color: #292c7a;
         text-align: center;
-        margin: 0;
-        font-size: clamp(28px, 4.5vw, 36px);
         letter-spacing: 0.08em;
 }
 
 .courses-grid {
-        margin-top: 26px;
         display: grid;
         grid-template-columns: repeat(2, minmax(300px, 1fr));
         gap: 22px 26px;
+        margin-top: 26px;
 }
 
 /* Card */
 .course-card {
+        padding: 18px;
         background: #f6f7f9;
+        border: 1px solid #eef2ff;
         border-radius: 14px;
         box-shadow:
                 0 1px 2px rgba(16, 24, 40, 0.06),
                 0 8px 30px rgba(54, 68, 171, 0.08);
-        border: 1px solid #eef2ff;
-        padding: 18px;
         transition:
                 transform 0.2s ease,
                 box-shadow 0.2s ease;
 }
 .course-card:hover {
-        transform: translateY(-2px);
         box-shadow:
                 0 4px 10px rgba(16, 24, 40, 0.08),
                 0 14px 38px rgba(54, 68, 171, 0.12);
+        transform: translateY(-2px);
 }
 /* So le 2 cột */
 .course-card:nth-child(2n) {
@@ -166,21 +166,21 @@
 }
 
 .course-card__title {
-        color: #10146b;
+        margin: 0 0 8px;
         font-size: 18px;
         font-weight: 800;
-        margin: 0 0 8px;
+        color: #10146b;
 }
 
 .course-card__desc {
-        color: #475569;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        min-height: 100px;
+        overflow: hidden;
+        -webkit-line-clamp: 6;
         font-size: 14px;
         line-height: 1.6;
-        min-height: 100px;
-        display: -webkit-box;
-        -webkit-line-clamp: 6;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        color: #475569;
 }
 
 .course-card__actions {
@@ -191,11 +191,11 @@
 
 /* Nút riêng cho card */
 .course-btn {
-        border: none;
-        cursor: pointer;
-        font-weight: 700;
-        font-size: 12.5px;
         padding: 9px 12px;
+        font-size: 12.5px;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
         border-radius: 999px;
 }
 .course-btn--primary {

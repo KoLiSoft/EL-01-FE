@@ -1,6 +1,5 @@
 /* topup.css */
 :root {
-        font-family: "Montserrat", sans-serif;
         --bg: #f5f6fb;
         --card: #fff;
         --line: #e8eaf5;
@@ -9,13 +8,12 @@
         --primary: #10146b;
         --success: #18a957;
         --warning: #ffb020;
+        font-family: "Montserrat", sans-serif;
 }
 * {
         box-sizing: border-box;
 }
 body {
-        background: var(--bg);
-        color: var(--text);
         font-family:
                 Inter,
                 system-ui,
@@ -24,44 +22,46 @@ body {
                 Roboto,
                 Arial,
                 sans-serif;
+        color: var(--text);
+        background: var(--bg);
 }
 
 /* wrapper */
 .topup {
+        padding: 16px 18px 22px;
         margin: 30px 50px;
         background: var(--card);
         border-radius: 16px;
         box-shadow: 0 6px 24px rgba(24, 34, 78, 0.06);
-        padding: 16px 18px 22px;
 }
 
 /* tabs */
 .topup__tabs {
         display: flex;
         gap: 18px;
-        border-bottom: 1px solid var(--line);
         padding: 6px 0;
+        border-bottom: 1px solid var(--line);
 }
 .topup__tab {
+        position: relative;
+        padding: 10px 8px;
+        font-weight: 600;
+        color: #49507a;
+        text-decoration: none;
+        cursor: pointer;
         background: none;
         border: none;
-        color: #49507a;
-        font-weight: 600;
-        padding: 10px 8px;
-        cursor: pointer;
-        position: relative;
-        text-decoration: none;
 }
 .topup__tab--active {
         color: #10146b;
 }
 .topup__tab--active::after {
-        content: "";
         position: absolute;
-        left: 0;
         right: 0;
         bottom: -7px;
+        left: 0;
         height: 3px;
+        content: "";
         background: #10146b;
         border-radius: 3px;
 }
@@ -69,8 +69,8 @@ body {
 /* balance row */
 .topup__row {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         padding: 12px 0;
 }
 .topup__balance {
@@ -80,64 +80,64 @@ body {
         color: var(--success);
 }
 .topup__help {
-        border: 1px solid var(--line);
-        background: #f7f9ff;
-        border-radius: 10px;
         padding: 8px 10px;
         cursor: pointer;
+        background: #f7f9ff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
 }
 
 /* methods */
 .topup__methods {
-        border: 1px solid var(--line);
-        border-radius: 12px;
         padding: 12px;
         background: #f9faff;
+        border: 1px solid var(--line);
+        border-radius: 12px;
 }
 .topup__method-type {
         display: flex;
         gap: 16px;
         align-items: center;
-        color: #49507a;
         margin-bottom: 10px;
+        color: #49507a;
 }
 .topup__radio {
         display: flex;
-        align-items: center;
         gap: 6px;
+        align-items: center;
 }
 .topup__banks {
         display: flex;
+        flex-wrap: wrap;
         gap: 14px;
         align-items: center;
-        flex-wrap: wrap;
 }
 .topup__bank {
-        border: 1px solid var(--line);
-        background: #fff;
-        border-radius: 10px;
         padding: 10px 16px;
         font-weight: 700;
         cursor: pointer;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
 }
 
 /* panel with QR */
 .topup__panel {
+        margin-top: 12px;
+        background: #fbfcff;
         border: 1px solid var(--line);
         border-radius: 12px;
-        background: #fbfcff;
-        margin-top: 12px;
 }
 .topup__panel-hd {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         padding: 12px 14px;
         border-bottom: 1px solid var(--line);
 }
 .topup__panel-right {
-        color: #3e446d;
         font-weight: 700;
+        color: #3e446d;
 }
 
 .topup__form-grid {
@@ -159,20 +159,20 @@ body {
 }
 .topup__form input {
         height: 40px;
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        background: #fff;
         padding: 0 12px;
         outline: none;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
 }
 .topup__form input:focus {
         border-color: #cfd3f5;
 }
 .topup__actions {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         gap: 10px;
+        align-items: center;
+        justify-content: space-between;
         margin-top: 8px;
 }
 .topup__actions-right {
@@ -180,41 +180,41 @@ body {
         gap: 8px;
 }
 .topup__btn {
-        border: 1px solid var(--line);
-        background: #fff;
-        border-radius: 10px;
         height: 40px;
         padding: 0 12px;
-        cursor: pointer;
         font-weight: 700;
+        cursor: pointer;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
 }
 .topup__btn--ghost {
-        background: #ff8800;
         color: #fff;
+        background: #ff8800;
         border-color: #ff8800;
 }
 .topup__btn--primary {
-        background: #10146b;
         color: #fff;
+        background: #10146b;
         border-color: #10146b;
 }
 .topup__btn--disabled {
-        background: #ffe9c7;
         color: #9a6a00;
-        border-color: #ffd9a0;
         cursor: not-allowed;
+        background: #ffe9c7;
+        border-color: #ffd9a0;
 }
 
 /* QR mini (right) */
 .topup__qr-mini {
-        border: 1px dashed #cfd6ff;
-        border-radius: 14px;
-        background: #fff;
-        padding: 10px;
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 10px;
+        align-items: center;
+        padding: 10px;
+        background: #fff;
+        border: 1px dashed #cfd6ff;
+        border-radius: 14px;
 }
 .topup__qr-mini img {
         width: 320px; /* chỉnh 300–360 tùy ảnh của bạn */
@@ -225,11 +225,11 @@ body {
         border-radius: 12px;
 }
 .topup__qr-mini-meta {
+        display: grid;
+        gap: 8px;
         width: 100%;
         font-size: 12px;
         color: #3a426b;
-        display: grid;
-        gap: 8px;
 }
 
 /* list footer */
@@ -260,45 +260,45 @@ body {
         right: 6px;
         height: 28px;
         padding: 0 12px;
-        border-radius: 8px;
-        border: 1px solid var(--line);
-        background: #eef1ff;
         font-weight: 700;
         cursor: pointer;
+        background: #eef1ff;
+        border: 1px solid var(--line);
+        border-radius: 8px;
 }
 .topup__copybtn:active {
         transform: translateY(1px);
 }
 .topup__radio {
         display: inline-flex;
-        align-items: center;
         gap: 6px;
+        align-items: center;
         cursor: pointer;
 }
 .topup__radio::before {
-        content: "";
+        display: inline-block;
         width: 12px;
         height: 12px;
-        border-radius: 999px;
+        content: "";
         border: 2px solid #10146b;
-        display: inline-block;
+        border-radius: 999px;
 }
 .topup__radio--active::before {
         background: #10146b;
 }
 .topup__radio--active {
-        color: #10146b;
         font-weight: 700;
+        color: #10146b;
 }
 .topup__radio,
 .topup__radio:link,
 .topup__radio:visited {
-        text-decoration: none !important; /* bỏ gạch chân */
-        color: var(--text); /* màu chữ mặc định */
         display: inline-flex;
-        align-items: center;
         gap: 8px;
+        align-items: center;
         font-weight: 600;
+        color: var(--text); /* màu chữ mặc định */
+        text-decoration: none !important;
 }
 
 .topup__radio:hover {
@@ -311,10 +311,10 @@ body {
 
 /* chấm tròn trước chữ */
 .topup__radio::before {
-        content: "";
+        display: inline-block;
         width: 12px;
         height: 12px;
-        border-radius: 999px;
+        content: "";
         border: 2px solid #10146b;
-        display: inline-block;
+        border-radius: 999px;
 }

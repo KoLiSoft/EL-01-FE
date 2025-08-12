@@ -1,29 +1,25 @@
 .login-card {
-        width: min(900px, 100%);
-        background: #fff;
-        border-radius: 18px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 24px;
+        width: min(900px, 100%);
         padding: 24px;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
 }
 
 /* LEFT */
 .login-left {
         position: relative;
-        background: #f7f8fd;
-        border-radius: 14px;
         padding: 20px;
         overflow: hidden;
+        background: #f7f8fd;
+        border-radius: 14px;
 }
 
 .login-slogan {
-        font-weight: 700;
-        color: #10146b;
-        line-height: 1.2;
         margin: 2px 0 14px;
-        font-size: clamp(18px, 2.2vw, 22px);
         font-family:
                 system-ui,
                 -apple-system,
@@ -31,11 +27,15 @@
                 Roboto,
                 "Helvetica Neue",
                 Arial;
+        font-size: clamp(18px, 2.2vw, 22px);
+        font-weight: 700;
+        line-height: 1.2;
+        color: #10146b;
 }
 .login-slogan .hl {
-        color: #ff8a00;
         font-family: "Pacifico", cursive;
         font-weight: 700;
+        color: #ff8a00;
 }
 .login-slogan .sub {
         font-weight: 700;
@@ -50,8 +50,8 @@
         width: 100%;
         aspect-ratio: 1 / 1;
         object-fit: cover;
-        border-radius: 20px;
         background: #fff;
+        border-radius: 20px;
         box-shadow: 0 8px 20px rgba(16, 20, 107, 0.12);
 }
 
@@ -64,28 +64,28 @@
         opacity: 0.25;
 }
 .decor-1 {
-        background: #ff8a00;
-        right: 22px;
         top: 18px;
+        right: 22px;
+        background: #ff8a00;
 }
 .decor-2 {
-        background: #5bc0eb;
-        left: 16px;
         bottom: 26px;
+        left: 16px;
+        background: #5bc0eb;
 }
 .decor-3 {
-        background: #7e7cf4;
         right: 56px;
         bottom: 40px;
+        background: #7e7cf4;
 }
 
 /* RIGHT */
 .login-right {
-        background: #fff;
-        border-radius: 14px;
-        padding: 14px 18px 8px;
         display: flex;
         flex-direction: column;
+        padding: 14px 18px 8px;
+        background: #fff;
+        border-radius: 14px;
 }
 
 .login-right h3 {
@@ -97,16 +97,16 @@
 
 .google-btn {
         display: flex;
+        gap: 10px;
         align-items: center;
         justify-content: center;
-        gap: 10px;
         width: 100%;
-        background: #f3f5fa;
-        border: 1px solid #e6e9f5;
-        border-radius: 12px;
         padding: 12px;
         font-weight: 600;
         color: #0e1b50;
+        background: #f3f5fa;
+        border: 1px solid #e6e9f5;
+        border-radius: 12px;
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05) inset;
 }
 .google-btn img {
@@ -119,49 +119,49 @@
 
 .divider {
         display: flex;
-        align-items: center;
         gap: 12px;
+        align-items: center;
         margin: 12px 0;
+        font-size: 13px;
+        color: #7a7f8a;
         /* nếu nền thẻ là trắng, giữ nguyên; nếu khác, đổi biến này */
         background-color: var(--card-bg, #fff);
-        color: #7a7f8a;
-        font-size: 13px;
 }
 
 .divider::before,
 .divider::after {
-        content: "";
         flex: 1; /* kéo giãn thành đường kẻ hai bên */
         height: 1px;
+        content: "";
         background: #e6e9f5;
         box-shadow: 0 1px 0 #d6dbe8 inset; /* mảnh như ảnh mẫu */
 }
 
 .divider span {
-        white-space: nowrap;
-        padding: 0 8px;
-        background-color: var(--card-bg, #fff); /* che phần line phía dưới */
         position: relative;
         top: 0; /* tránh lệch baseline */
+        padding: 0 8px;
+        white-space: nowrap;
+        background-color: var(--card-bg, #fff); /* tránh lệch baseline */
 }
 
 /* form */
 .login-form {
-        font-family: "Montserrat", sans-serif;
         display: flex;
         flex-direction: column;
         gap: 12px;
         margin-top: 6px;
+        font-family: "Montserrat", sans-serif;
 }
 
 .input-group {
         position: relative;
         display: flex;
         align-items: center;
-        border: 1px solid #e6e9f5;
-        border-radius: 12px;
         padding: 10px 12px;
         background: #fff;
+        border: 1px solid #e6e9f5;
+        border-radius: 12px;
         box-shadow: 0 2px 0 rgba(16, 20, 107, 0.04) inset;
 }
 .input-group:focus-within {
@@ -170,10 +170,10 @@
 }
 .input-group input {
         width: 100%;
-        border: 0;
-        outline: none;
         font-size: 14px;
+        outline: none;
         background: transparent;
+        border: 0;
 }
 .input-icon {
         width: 16px;
@@ -189,11 +189,11 @@
 }
 
 .agree {
+        display: flex;
+        gap: 8px;
+        align-items: center;
         font-size: 13px;
         color: #606575;
-        display: flex;
-        align-items: center;
-        gap: 8px;
 }
 .agree a {
         color: #10146b;
@@ -201,14 +201,14 @@
 }
 
 .submit-btn {
+        padding: 12px 14px;
         font-family: "Montserrat", sans-serif;
-        background: #10146b;
+        font-weight: 800;
         color: #fff;
+        cursor: pointer;
+        background: #10146b;
         border: 0;
         border-radius: 12px;
-        padding: 12px 14px;
-        font-weight: 800;
-        cursor: pointer;
         box-shadow: 0 12px 30px rgba(16, 20, 107, 0.25);
 }
 .submit-btn:hover {
@@ -216,14 +216,14 @@
 }
 
 .muted {
-        text-align: center;
-        color: #7a7f8a;
-        font-size: 13px;
         margin-top: 8px;
+        font-size: 13px;
+        color: #7a7f8a;
+        text-align: center;
 }
 .muted a {
-        color: #10146b;
         font-weight: 600;
+        color: #10146b;
 }
 
 /* Responsive */

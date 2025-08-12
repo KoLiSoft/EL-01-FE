@@ -23,42 +23,42 @@
 }
 .helpdlg__panel {
         position: absolute;
-        right: 24px;
         top: 24px;
+        right: 24px;
         bottom: 24px;
+        display: flex;
+        flex-direction: column;
         width: 380px;
         max-width: calc(100vw - 48px);
+        overflow: hidden;
         background: var(--card);
         border: 1px solid var(--line);
         border-radius: 16px;
         box-shadow: 0 20px 40px rgba(16, 20, 107, 0.15);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
 }
 .helpdlg__close {
         position: absolute;
-        right: 14px;
         top: 6px;
-        border: none;
-        background: transparent;
+        right: 14px;
         font-size: 28px;
         line-height: 1;
         color: #1b2156;
         cursor: pointer;
+        background: transparent;
+        border: none;
 }
 
 .helpdlg__search {
-        margin: 16px;
-        padding: 12px 14px;
         width: calc(100% - 32px);
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        background: #f7f8ff;
-        color: var(--text);
+        padding: 12px 14px;
+        margin: 16px;
         font-weight: 600;
+        color: var(--text);
         text-align: left;
         cursor: pointer;
+        background: #f7f8ff;
+        border: 1px solid var(--line);
+        border-radius: 12px;
 }
 .helpdlg__search-plus {
         float: right;
@@ -66,10 +66,10 @@
 }
 
 .helpdlg__list {
-        list-style: none;
-        margin: 0;
         padding: 0 16px 16px;
+        margin: 0;
         overflow: auto;
+        list-style: none;
 }
 .helpdlg__item {
         padding: 14px 0;
@@ -82,24 +82,24 @@
 }
 
 .helpdlg__badge {
-        width: 74px;
-        background: #0d1658;
-        color: #fff;
-        border-radius: 12px;
-        padding: 10px 8px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 74px;
+        padding: 10px 8px;
+        color: #fff;
+        background: #0d1658;
+        border-radius: 12px;
 }
 .helpdlg__badge-top {
-        opacity: 0.8;
         font-size: 12px;
+        opacity: 0.8;
 }
 .helpdlg__badge-code {
-        font-weight: 800;
-        font-size: 18px;
         margin-top: 2px;
+        font-size: 18px;
+        font-weight: 800;
 }
 
 .helpdlg__body {
@@ -117,19 +117,19 @@
 }
 .helpdlg__btn {
         width: max-content;
-        background: #0e1454;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
         padding: 6px 10px;
         font-weight: 700;
+        color: #fff;
         cursor: pointer;
+        background: #0e1454;
+        border: none;
+        border-radius: 8px;
 }
 
 .helpdlg__status {
+        margin-top: 2px;
         font-weight: 700;
         white-space: nowrap;
-        margin-top: 2px;
 }
 .helpdlg__status--pending {
         color: var(--warn);
@@ -143,6 +143,6 @@
 
 .helpdlg__divider {
         height: 1px;
-        background: var(--line);
         margin-top: 14px;
+        background: var(--line);
 }

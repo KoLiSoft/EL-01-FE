@@ -6,28 +6,28 @@
 }
 
 .tc-card {
+        max-width: 610px; /* tùy ý */
+        padding: 20px 22px;
         font-family: "Montserrat", sans-serif;
+        color: var(--tc-text);
         background: #fff;
         border-radius: 16px;
-        padding: 20px 22px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        color: var(--tc-text);
-        max-width: 610px; /* tùy ý */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* tùy ý */
 }
 
 /* Header */
 .tc-header {
         display: grid;
         grid-template-columns: 60px 1fr auto;
-        align-items: center;
         gap: 14px;
+        align-items: center;
 }
 .tc-avatar {
         width: 60px;
         height: 60px;
-        border-radius: 50%;
         object-fit: cover;
         border: 3px solid #fff;
+        border-radius: 50%;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 .tc-headInfo {
@@ -39,9 +39,9 @@
         color: #000;
 }
 .tc-online {
+        margin-top: 4px;
         font-size: 14px;
         color: #6c757d;
-        margin-top: 4px;
 }
 .tc-meta {
         display: flex;
@@ -74,16 +74,16 @@
 /* Separator */
 .tc-sep {
         height: 1px;
-        background: var(--tc-border);
         margin: 14px 0;
+        background: var(--tc-border);
 }
 
 /* Rows */
 .tc-row {
         display: grid;
         grid-template-columns: 28px 130px 1fr 1fr;
-        align-items: center;
         gap: 8px 10px;
+        align-items: center;
         padding: 8px 0;
 }
 .tc-row--2lines {
@@ -105,8 +105,8 @@
         color: #303f9f;
 }
 .tc-link {
-        color: #0a5eea;
         font-weight: 600;
+        color: #0a5eea;
         cursor: pointer;
 }
 .tc-link:hover {
@@ -120,22 +120,22 @@
 /* Tags */
 .tc-tags {
         display: flex;
+        flex-wrap: wrap;
         gap: 10px;
         justify-content: flex-end;
-        flex-wrap: wrap;
 }
 .tc-tag {
         padding: 6px 12px;
-        border: 1px solid var(--tc-border);
-        border-radius: 8px;
-        background: #fff;
         font-size: 13px;
         color: #333;
         white-space: nowrap;
+        background: #fff;
+        border: 1px solid var(--tc-border);
+        border-radius: 8px;
 }
 .tc-tag.is-more {
-        background: #f4f6ff;
         color: var(--tc-primary);
+        background: #f4f6ff;
         border-color: #dde3ff;
 }
 
@@ -152,13 +152,13 @@
         margin-top: 14px;
 }
 .tc-btn {
-        background: var(--tc-primary);
-        color: #fff;
-        border: none;
         padding: 10px 18px;
-        border-radius: 10px;
-        cursor: pointer;
         font-weight: 700;
+        color: #fff;
+        cursor: pointer;
+        background: var(--tc-primary);
+        border: none;
+        border-radius: 10px;
         box-shadow: 0 6px 14px rgba(16, 20, 107, 0.18);
 }
 .tc-btn:hover {
@@ -171,9 +171,9 @@
                 grid-template-columns: 26px 120px 1fr;
         }
         .tc-right {
+                grid-column: 2 / -1;
                 justify-self: start;
                 margin-top: 6px;
-                grid-column: 2 / -1;
         }
         .tc-tags {
                 justify-content: flex-start;
@@ -187,18 +187,18 @@
         }
 }
 .featured-teachers-section {
-        margin: 0 auto;
-        padding: 24px 16px 8px;
         position: relative;
+        padding: 24px 16px 8px;
+        margin: 0 auto;
 }
 
 .featured-teachers-section h2 {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 800;
-        font-size: clamp(22px, 3.3vw, 40px);
-        color: #0e1b50;
         margin-bottom: 18px;
+        font-family: "Montserrat", sans-serif;
+        font-size: clamp(22px, 3.3vw, 40px);
+        font-weight: 800;
         line-height: 1.15;
+        color: #0e1b50;
 }
 .featured-teachers-section h2 span {
         color: var(--tc-orange, #f6a61d);
@@ -209,25 +209,25 @@
         position: relative;
         display: grid;
         grid-template-columns: 40px 1fr 40px; /* 2 nút prev/next */
-        align-items: center;
         gap: 8px;
+        align-items: center;
 }
 
 /* Nút điều hướng */
 .ft-nav {
         width: 40px;
         height: 40px;
-        border-radius: 999px;
-        border: 1px solid #e6e9f5;
-        background: #fff;
         font-size: 22px;
         line-height: 1;
         cursor: pointer;
+        background: #fff;
+        border: 1px solid #e6e9f5;
+        border-radius: 999px;
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 .ft-nav:disabled {
-        opacity: 0.4;
         cursor: default;
+        opacity: 0.4;
 }
 
 /* Viewport & track */
@@ -242,11 +242,11 @@
 
 /* Mỗi slide = 100% viewport */
 .ft-slide {
-        min-width: 100%;
-        padding: 8px; /* khoảng trắng như hình 2 */
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* desktop: 3 card/khung */
         gap: 16px;
+        min-width: 100%;
+        padding: 8px;
 }
 
 /* Card wrapper để giới hạn chiều cao/đổ bóng đều nhau */
@@ -260,17 +260,17 @@
 /* Chấm tròn điều hướng */
 .ft-dots {
         display: flex;
-        justify-content: center;
         gap: 10px;
+        justify-content: center;
         margin-top: 12px;
 }
 .ft-dot {
         width: 8px;
         height: 8px;
-        border-radius: 999px;
+        cursor: pointer;
         background: #d8dff5;
         border: none;
-        cursor: pointer;
+        border-radius: 999px;
 }
 .ft-dot.is-active {
         width: 8px;
@@ -296,8 +296,8 @@
         }
 }
 .ft-cardWrap .tc-card {
-        max-width: none; /* <— ghi đè 610px */
         width: 100%;
+        max-width: none;
 }
 .ft-track {
         will-change: transform;
@@ -308,8 +308,8 @@
 
 /* Ghi đè kích thước & căn tag khi trong carousel */
 .ft-cardWrap .tc-card {
-        max-width: none;
         width: 100%;
+        max-width: none;
         height: 100%;
 }
 .ft-cardWrap .tc-tags {

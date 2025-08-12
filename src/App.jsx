@@ -25,56 +25,56 @@ function App() {
                         <BrowserRouter>
                                 <Navbar />
                                 <Routes>
-                                        <Route path="/" element={<Home />} />
-                                        <Route path="/about" element={<About />} />
-                                        <Route path="/forgot-password" element={<ForgotPassword />} />
-                                        <Route path="/login" element={<Login />} />
-                                        <Route path="/register-std" element={<Registerstd />} />
-                                        <Route path="/teacher-team" element={<TeacherTeam />} />
-                                        <Route path="/filter" element={<Filter />} />
-                                        <Route path="/course" element={<Course />} />
-                                        <Route path="/profile-std" element={<ProfileStd />} />
-                                        <Route path="/profile-tc" element={<ProfileTc />} />
-                                        <Route path="/transactions" element={<Transactions />} />
-                                        <Route path="/topup" element={<TopUp />} />
-                                        <Route path="/withdraw" element={<Withdraw />} />
-                                        <Route path="/ewallet" element={<EWallet />} />
-                                        <Route path="/tutorResult" element={<TutorResults />} />
-                                        <Route path="/profilestdinfo" element={<ProfileStdInfo />} />
-                                        <Route path="/service" element={<Service />} />
-                                        <Route path="/profile-std" element={<ProfileStd />}>
+                                        <Route element={<Home />} path="/" />
+                                        <Route element={<About />} path="/about" />
+                                        <Route element={<ForgotPassword />} path="/forgot-password" />
+                                        <Route element={<Login />} path="/login" />
+                                        <Route element={<Registerstd />} path="/register-std" />
+                                        <Route element={<TeacherTeam />} path="/teacher-team" />
+                                        <Route element={<Filter />} path="/filter" />
+                                        <Route element={<Course />} path="/course" />
+                                        <Route element={<ProfileStd />} path="/profile-std" />
+                                        <Route element={<ProfileTc />} path="/profile-tc" />
+                                        <Route element={<Transactions />} path="/transactions" />
+                                        <Route element={<TopUp />} path="/topup" />
+                                        <Route element={<Withdraw />} path="/withdraw" />
+                                        <Route element={<EWallet />} path="/ewallet" />
+                                        <Route element={<TutorResults />} path="/tutorResult" />
+                                        <Route element={<ProfileStdInfo />} path="/profilestdinfo" />
+                                        <Route element={<Service />} path="/service" />
+                                        <Route element={<ProfileStd />} path="/profile-std">
                                                 {/* Trang thông tin cá nhân */}
-                                                <Route index element={<ProfileStdInfo />} />
+                                                <Route element={<ProfileStdInfo />} index />
 
                                                 {/* Cụm Ví (giao dịch) dưới /profile-std/wallet */}
                                                 <Route path="wallet">
-                                                        <Route index element={<Transactions />} />
-                                                        <Route path="topup" element={<TopUp />} />
-                                                        <Route path="withdraw" element={<Withdraw />} />
-                                                        <Route path="ewallet" element={<EWallet />} />
+                                                        <Route element={<Transactions />} index />
+                                                        <Route element={<TopUp />} path="topup" />
+                                                        <Route element={<Withdraw />} path="withdraw" />
+                                                        <Route element={<EWallet />} path="ewallet" />
                                                 </Route>
                                         </Route>
 
                                         {/* Redirect từ các route cũ (để không mất SEO/link cũ) */}
                                         <Route
+                                                element={<Navigate replace to="/profile-std/wallet" />}
                                                 path="/transactions"
-                                                element={<Navigate to="/profile-std/wallet" replace />}
                                         />
                                         <Route
+                                                element={<Navigate replace to="/profile-std/wallet/topup" />}
                                                 path="/topup"
-                                                element={<Navigate to="/profile-std/wallet/topup" replace />}
                                         />
                                         <Route
+                                                element={<Navigate replace to="/profile-std/wallet/withdraw" />}
                                                 path="/withdraw"
-                                                element={<Navigate to="/profile-std/wallet/withdraw" replace />}
                                         />
                                         <Route
+                                                element={<Navigate replace to="/profile-std/wallet/ewallet" />}
                                                 path="/ewallet"
-                                                element={<Navigate to="/profile-std/wallet/ewallet" replace />}
                                         />
 
                                         {/* Fallback */}
-                                        <Route path="*" element={<Navigate to="/" replace />} />
+                                        <Route element={<Navigate replace to="/" />} path="*" />
                                 </Routes>
                                 <Footer />
                         </BrowserRouter>

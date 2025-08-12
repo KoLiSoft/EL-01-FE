@@ -10,7 +10,31 @@
                                 "useSortedProperties": "on"
                         }
                 },
-                "enabled": true
+                "enabled": true,
+                "includes": [
+                        "src/**/*.{js,jsx,ts,tsx}",
+                        "src/**/*.{css,scss,sass,less,styl}",
+                        "src/**/*.{html,htm,xhtml,xml}"
+                ]
+        },
+        "css": {
+                "assist": {
+                        "enabled": true
+                },
+                "formatter": {
+                        "enabled": true,
+                        "indentStyle": "space",
+                        "indentWidth": 8,
+                        "lineEnding": "lf",
+                        "lineWidth": 120,
+                        "quoteStyle": "double"
+                },
+                "linter": {
+                        "enabled": true
+                },
+                "parser": {
+                        "cssModules": true
+                }
         },
         "files": {
                 "ignoreUnknown": false
@@ -60,6 +84,11 @@
                         "quoteStyle": "double",
                         "semicolons": "always",
                         "trailingCommas": "es5"
+                }
+        },
+        "json": {
+                "assist": {
+                        "enabled": true
                 }
         },
         "linter": {

@@ -3,53 +3,53 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 const FEATURED = [
         {
-                title: "Gói “Luyện thi Đại học”",
                 desc: "Phù hợp cho học sinh lớp 11–12 ôn thi THPT Quốc gia",
-                form: "Online/Offline",
                 duration: "2–3 buổi/tuần",
+                form: "Online/Offline",
                 price: "Từ 1,500,000vnđ/tháng",
                 stars: 5,
+                title: "Gói “Luyện thi Đại học”",
         },
         {
-                title: "Gói “Học Tiếng Anh Giao Tiếp”",
                 desc: "Dành cho người mới bắt đầu – đi làm – học sinh muốn cải thiện phản xạ",
-                form: "Online",
                 duration: "1–2 buổi/tuần",
+                form: "Online",
                 price: "Từ 800,000vnđ/tháng",
                 stars: 5,
+                title: "Gói “Học Tiếng Anh Giao Tiếp”",
         },
         {
-                title: "Gói “Nâng Cao Toán – Lý – Hóa”",
                 desc: "Phù hợp cho học sinh từ lớp 8 đến lớp 12 cần củng cố & mở rộng kiến thức",
-                form: "Offline tại nhà",
                 duration: "2 buổi/tuần",
+                form: "Offline tại nhà",
                 price: "Từ 1,000,000vnđ/tháng",
                 stars: 5,
+                title: "Gói “Nâng Cao Toán – Lý – Hóa”",
         },
         // Thêm bao nhiêu item cũng được để có nhiều “trang”
         {
-                title: "Gói Lập Trình",
                 desc: "Python/C/C++ + tư duy thuật toán + dự án nhỏ",
-                form: "Online",
                 duration: "2 buổi/tuần",
+                form: "Online",
                 price: "Từ 900,000vnđ/tháng",
                 stars: 5,
+                title: "Gói Lập Trình",
         },
         {
-                title: "Gói Thiết Kế Đồ Hoạ",
                 desc: "Canva, Photoshop cơ bản → nâng cao, bài tập thực chiến",
-                form: "Online/Offline",
                 duration: "1–2 buổi/tuần",
+                form: "Online/Offline",
                 price: "Từ 950,000vnđ/tháng",
                 stars: 5,
+                title: "Gói Thiết Kế Đồ Hoạ",
         },
         {
-                title: "Gói Cấp 1 & Cấp 2",
                 desc: "Củng cố nền tảng Toán – Văn – Anh, theo sát chương trình",
-                form: "Online",
                 duration: "2 buổi/tuần",
+                form: "Online",
                 price: "Từ 700,000vnđ/tháng",
                 stars: 5,
+                title: "Gói Cấp 1 & Cấp 2",
         },
 ];
 
@@ -84,7 +84,7 @@ export default function FeaturedCourses() {
                 const el = trackRef.current;
                 if (!el) return;
                 setIndex(i);
-                el.scrollTo({ left: i * el.clientWidth, behavior: "smooth" });
+                el.scrollTo({ behavior: "smooth", left: i * el.clientWidth });
         };
 
         const next = () => scrollToSlide(Math.min(index + 1, slides.length - 1));
@@ -107,15 +107,15 @@ export default function FeaturedCourses() {
 
                                 <div className="fc-slider">
                                         <button
-                                                className="fc-arrow fc-arrow--left"
                                                 aria-label="Trang trước"
-                                                onClick={prev}
+                                                className="fc-arrow fc-arrow--left"
                                                 disabled={index === 0}
+                                                onClick={prev}
                                         >
                                                 ‹
                                         </button>
 
-                                        <div className="fc-track" ref={trackRef} onScroll={onTrackScroll}>
+                                        <div className="fc-track" onScroll={onTrackScroll} ref={trackRef}>
                                                 {slides.map((group, si) => (
                                                         <div className="fc-slide" key={si}>
                                                                 <div
@@ -130,8 +130,8 @@ export default function FeaturedCourses() {
                                                                                         <header className="fc-card__head">
                                                                                                 <div className="fc-title">
                                                                                                         <span
-                                                                                                                className="fc-dot"
                                                                                                                 aria-hidden="true"
+                                                                                                                className="fc-dot"
                                                                                                         ></span>
                                                                                                         <h3>
                                                                                                                 {
@@ -140,8 +140,8 @@ export default function FeaturedCourses() {
                                                                                                         </h3>
                                                                                                 </div>
                                                                                                 <div
-                                                                                                        className="fc-rating"
                                                                                                         aria-label={`${item.stars} trên 5`}
+                                                                                                        className="fc-rating"
                                                                                                 >
                                                                                                         {"★★★★★".slice(
                                                                                                                 0,
@@ -157,13 +157,13 @@ export default function FeaturedCourses() {
                                                                                         <ul className="fc-meta">
                                                                                                 <li>
                                                                                                         <span
-                                                                                                                className="fc-ico"
                                                                                                                 aria-hidden="true"
+                                                                                                                className="fc-ico"
                                                                                                         >
                                                                                                                 <svg
+                                                                                                                        height="16"
                                                                                                                         viewBox="0 0 24 24"
                                                                                                                         width="16"
-                                                                                                                        height="16"
                                                                                                                 >
                                                                                                                         <path
                                                                                                                                 d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm7 12h2v2h-2z"
@@ -183,20 +183,20 @@ export default function FeaturedCourses() {
                                                                                                 </li>
                                                                                                 <li>
                                                                                                         <span
-                                                                                                                className="fc-ico"
                                                                                                                 aria-hidden="true"
+                                                                                                                className="fc-ico"
                                                                                                         >
                                                                                                                 <svg
+                                                                                                                        height="16"
                                                                                                                         viewBox="0 0 24 24"
                                                                                                                         width="16"
-                                                                                                                        height="16"
                                                                                                                 >
                                                                                                                         <path
                                                                                                                                 d="M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"
                                                                                                                                 fill="none"
                                                                                                                                 stroke="currentColor"
-                                                                                                                                strokeWidth="2"
                                                                                                                                 strokeLinecap="round"
+                                                                                                                                strokeWidth="2"
                                                                                                                         />
                                                                                                                 </svg>
                                                                                                         </span>
@@ -237,10 +237,10 @@ export default function FeaturedCourses() {
                                         </div>
 
                                         <button
-                                                className="fc-arrow fc-arrow--right"
                                                 aria-label="Trang sau"
-                                                onClick={next}
+                                                className="fc-arrow fc-arrow--right"
                                                 disabled={index === slides.length - 1}
+                                                onClick={next}
                                         >
                                                 ›
                                         </button>
@@ -249,9 +249,9 @@ export default function FeaturedCourses() {
                                 <div className="fc-dots">
                                         {slides.map((_, i) => (
                                                 <button
-                                                        key={i}
-                                                        className={`fc-dot ${i === index ? "active" : ""}`}
                                                         aria-label={`Tới trang ${i + 1}`}
+                                                        className={`fc-dot ${i === index ? "active" : ""}`}
+                                                        key={i}
                                                         onClick={() => scrollToSlide(i)}
                                                 />
                                         ))}

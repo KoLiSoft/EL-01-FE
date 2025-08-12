@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../style/topup.css";
 import walletQR from "../assets/img/ewallet-qr.png";
+
 // nút copy tái dùng
 function CopyInput({ label, value = "", editable = false }) {
         const [val, setVal] = React.useState(value);
@@ -19,14 +20,14 @@ function CopyInput({ label, value = "", editable = false }) {
                         <span>{label}</span>
                         <div className="topup__copywrap">
                                 <input
-                                        value={val}
                                         onChange={(e) => (editable ? setVal(e.target.value) : null)}
                                         readOnly={!editable}
+                                        value={val}
                                 />
                                 <button
-                                        type="button"
                                         className={"topup__copybtn" + (copied ? " is-copied" : "")}
                                         onClick={doCopy}
+                                        type="button"
                                 >
                                         {copied ? "Đã copy" : "Copy"}
                                 </button>
@@ -36,10 +37,10 @@ function CopyInput({ label, value = "", editable = false }) {
 }
 
 const WALLET_DEFAULT = {
+        content: "EDULINKTUTOR - 123456789 - Nguyen Van A",
+        holder: "EDULINKTUTOR",
         provider: "MoMo",
         walletId: "0937979799",
-        holder: "EDULINKTUTOR",
-        content: "EDULINKTUTOR - 123456789 - Nguyen Van A",
 };
 
 export default function EWallet({ qrImage, walletInfo }) {
@@ -51,13 +52,13 @@ export default function EWallet({ qrImage, walletInfo }) {
                         {/* dùng cùng wrapper */}
                         {/* Tabs trên cùng */}
                         <div className="topup__tabs">
-                                <Link to="/transactions" className="topup__tab">
+                                <Link className="topup__tab" to="/transactions">
                                         Lịch sử giao dịch
                                 </Link>
-                                <Link to="/topup" className="trxn__tab">
+                                <Link className="trxn__tab" to="/topup">
                                         Nạp tiền
                                 </Link>
-                                <Link to="/withdraw" className="trxn__tab">
+                                <Link className="trxn__tab" to="/withdraw">
                                         Rút tiền
                                 </Link>
                                 {/* <button className="topup__tab" disabled>Quá trình học</button> */}
@@ -72,7 +73,7 @@ export default function EWallet({ qrImage, walletInfo }) {
                         <div className="topup__methods">
                                 <div className="topup__method-type">
                                         <span>Chọn phương thức nạp</span>
-                                        <Link to="/topup" className="topup__radio">
+                                        <Link className="topup__radio" to="/topup">
                                                 Ngân hàng
                                         </Link>
                                         <span className="topup__radio topup__radio--active">Ví điện tử</span>
@@ -93,9 +94,9 @@ export default function EWallet({ qrImage, walletInfo }) {
                                                 <CopyInput label="Số điện thoại / ID ví:" value={info.walletId} />
                                                 <CopyInput label="Tên chủ ví:" value={info.holder} />
                                                 <CopyInput
+                                                        editable
                                                         label="Nội dung chuyển tiền:"
                                                         value={info.content}
-                                                        editable
                                                 />
 
                                                 <div className="topup__actions">
@@ -112,7 +113,7 @@ export default function EWallet({ qrImage, walletInfo }) {
 
                                         {/* Phải: QR ví */}
                                         <aside className="topup__qr-mini">
-                                                <img src={qrSrc} alt="QR ví điện tử" />
+                                                <img alt="QR ví điện tử" src={qrSrc} />
                                                 <div className="topup__qr-mini-meta">
                                                         <div>
                                                                 <strong>Ví:</strong> {info.provider}

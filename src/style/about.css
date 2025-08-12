@@ -1,9 +1,9 @@
 .about-section {
-        background-color: #0c1a63;
-        color: white;
         padding: 50px 20px;
-        text-align: center;
         font-family: "Montserrat", sans-serif;
+        color: white;
+        text-align: center;
+        background-color: #0c1a63;
 }
 
 .about-content {
@@ -12,46 +12,46 @@
 }
 
 .title {
-        font-size: 2.5rem;
         margin-bottom: 5px;
+        font-size: 2.5rem;
 }
 
 .highlight-about {
-        color: #ff7b00;
-        font-weight: bold;
         font-size: 2.5em;
+        font-weight: bold;
+        color: #ff7b00;
 }
 
 .subtitle {
-        font-size: 2em;
         margin-bottom: 20px;
+        font-size: 2em;
 }
 
 .description {
+        margin-bottom: 25px;
         font-size: 1rem;
         line-height: 1.6;
-        margin-bottom: 25px;
 }
 
 .buttons {
         display: flex;
-        justify-content: center;
         gap: 15px;
+        justify-content: center;
         margin-bottom: 40px;
 }
 
 .btn {
         padding: 10px 25px;
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
         font-weight: bold;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
 }
 
 .register {
-        background-color: #ff8819;
-        color: white;
         font-size: 1.2em;
+        color: white;
+        background-color: #ff8819;
 }
 .register:hover {
         background-color: #ff8800;
@@ -59,9 +59,9 @@
 
 .about-images {
         display: flex;
-        justify-content: center;
-        gap: 20px;
         flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
 }
 
 .img-card {
@@ -86,15 +86,15 @@
         /* ảnh nền đứng sau, không chiếm chỗ */
         background-image: url("../assets/img/img3.png");
         background-repeat: no-repeat;
-        background-size: cover;
         background-position: center;
+        background-size: cover;
 }
 
 .about-values,
 .about-team {
-        background: transparent;
         position: relative;
         z-index: 1;
+        background: transparent;
 }
 
 .about-values:first-child {
@@ -112,19 +112,19 @@
         max-width: 560px;
 }
 .about-values__heading {
+        margin: 0 0 12px;
         font-size: 40px;
+        font-weight: 700;
         line-height: 1.25;
         color: var(--about-blue);
-        margin: 0 0 12px;
-        font-weight: 700;
 }
 .about-values__heading span {
         color: var(--about-brand);
 }
 .about-values__lead {
-        color: #47507a;
-        line-height: 1.7;
         margin: 0;
+        line-height: 1.7;
+        color: #47507a;
 }
 
 /* grid 4 ô */
@@ -136,44 +136,44 @@
 
 /* card */
 .values-card {
+        min-height: 230px;
+        padding: 22px 22px 18px;
+        overflow: hidden;
+        color: var(--about-blue);
+        background: #fff;
         border: 2px solid var(--about-line);
         border-radius: 14px;
-        padding: 22px 22px 18px;
-        min-height: 230px;
-        background: #fff;
-        color: var(--about-blue);
         transition:
                 background 0.25s ease,
                 color 0.25s ease,
                 border-color 0.25s ease;
-        overflow: hidden;
 }
 .card-head {
         display: flex;
-        align-items: center;
-        gap: 12px;
         flex-direction: column;
+        gap: 12px;
+        align-items: center;
         align-items: flex-start;
         padding-left: 30px;
 }
 .card-index {
-        font-weight: 800;
         font-size: 20px;
+        font-weight: 800;
         color: var(--about-brand);
 }
 .card-title {
-        font-size: 18px;
         margin: 0;
+        font-size: 18px;
 }
 
 /* mô tả: ẩn khi không hover */
 .card-desc {
+        max-height: 0;
         margin: 12px 0 0;
+        overflow: hidden;
         line-height: 1.6;
         color: #4a5583;
-        max-height: 0;
         opacity: 0;
-        overflow: hidden;
         transition:
                 max-height 0.3s ease,
                 opacity 0.25s ease,
@@ -182,23 +182,23 @@
 
 /* hover: nền xanh, chữ trắng, hiện mô tả */
 .values-card:hover {
+        color: #fff;
         background: var(--about-hover);
         border-color: var(--about-hover);
-        color: #fff;
 }
 .values-card:hover .card-index,
 .values-card:hover .card-title {
         color: #fff;
 }
 .values-card:hover .card-desc {
-        color: #fff;
         max-height: 220px;
+        color: #fff;
         opacity: 1;
 }
 .values-card:hover .card-head {
-        opacity: 0;
         max-height: 0;
         overflow: hidden;
+        opacity: 0;
         transition:
                 opacity 0.25s ease,
                 max-height 0.25s ease;
@@ -241,85 +241,85 @@
 /* lưới 4 ô bên trái */
 
 .about-team__grid {
+        position: relative;
         display: grid;
         grid-template-columns: repeat(2, minmax(240px, 1fr));
         gap: 20px 24px;
-        position: relative;
 }
 .about-team__grid::before {
-        content: "";
         position: absolute;
         top: -40px;
         left: 50%;
-        transform: translateX(-20%);
         width: 1400px;
         height: 1px;
+        content: "";
         background-color: #eee;
+        transform: translateX(-20%);
 }
 /* thẻ – đặt tên khác để không xung đột với .values-card */
 .team-card {
+        min-height: 230px;
+        padding: 80px 100px;
+        overflow: hidden;
+        color: var(--about-blue);
+        background: #fff;
         border: 2px solid var(--about-line);
         border-radius: 14px;
-        padding: 80px 100px;
-        min-height: 230px;
-        background: #fff;
-        color: var(--about-blue);
         transition:
                 background 0.25s ease,
                 color 0.25s ease,
                 border-color 0.25s ease;
-        overflow: hidden;
 }
 .team-head {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         gap: 6px;
+        align-items: flex-start;
         padding-left: 30px;
 }
 .team-index {
-        font-weight: 800;
         font-size: 20px;
+        font-weight: 800;
         color: var(--about-brand);
 }
 .team-title {
-        font-size: 18px;
         margin: 0;
+        font-size: 18px;
 }
 
 /* mô tả: ẩn mặc định */
 .team-desc {
+        max-height: 0;
         margin: 12px 0 0;
+        overflow: hidden;
         line-height: 1.6;
         color: #4a5583;
-        max-height: 0;
         opacity: 0;
-        overflow: hidden;
+        transform: translateY(6px);
         transition:
                 max-height 0.3s ease,
                 opacity 0.25s ease,
                 color 0.25s ease,
                 transform 0.25s ease;
-        transform: translateY(6px);
 }
 
 /* HOVER: nền xanh, ẩn head, hiện desc (trùng hành vi section trước) */
 .team-card:hover {
+        color: #fff;
         background: var(--about-hover);
         border-color: var(--about-hover);
-        color: #fff;
 }
 .team-card:hover .team-head {
-        opacity: 0;
         max-height: 0;
         overflow: hidden;
+        opacity: 0;
         transition:
                 opacity 0.2s ease,
                 max-height 0.2s ease;
 }
 .team-card:hover .team-desc {
-        color: #fff;
         max-height: 220px;
+        color: #fff;
         opacity: 1;
         transform: translateY(0);
 }
@@ -339,29 +339,29 @@
         max-width: 560px;
 }
 .about-team__heading {
+        margin: 0 0 12px;
         font-size: 40px;
+        font-weight: 700;
         line-height: 1.25;
         color: var(--about-blue);
-        margin: 0 0 12px;
-        font-weight: 700;
 }
 .about-team__heading span {
         color: var(--about-brand);
 }
 .about-team__lead {
-        color: #47507a;
-        line-height: 1.7;
         margin: 0 0 16px;
+        line-height: 1.7;
+        color: #47507a;
 }
 .team-btn {
-        background: var(--about-brand);
-        color: #fff;
-        border: none;
         padding: 10px 18px;
-        border-radius: 8px;
-        font-weight: 700;
-        cursor: pointer;
         font-size: 1.5em;
+        font-weight: 700;
+        color: #fff;
+        cursor: pointer;
+        background: var(--about-brand);
+        border: none;
+        border-radius: 8px;
 }
 
 /* responsive */
@@ -380,22 +380,22 @@
 }
 /* ===== Stats Section ===== */
 .about-stats {
-        background: #fff;
-        padding: 28px 48px 56px;
         position: relative;
+        padding: 28px 48px 56px;
+        background: #fff;
 }
 
 /* đường gạch mảnh phía trên */
 .about-stats::before {
-        content: "";
         position: absolute;
         top: 0;
         left: 50%;
-        transform: translateX(-50%);
         width: 100%;
         max-width: 1200px; /* giống ảnh mẫu, có thể đổi 100% nếu muốn full */
         height: 1px;
+        content: "";
         background: #eee;
+        transform: translateX(-50%);
 }
 
 .stats-inner {
@@ -407,27 +407,27 @@
 .stats-heading {
         margin: 18px 0 24px;
         font-size: 40px;
+        font-weight: 800;
         line-height: 1.2;
         color: var(--about-blue);
-        font-weight: 800;
 }
 
 .stats-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(180px, 1fr));
         gap: 28px;
-        list-style: none;
+        align-items: start;
         padding: 0;
         margin: 0;
-        align-items: start;
+        list-style: none;
 }
 
 .stat-number {
+        margin-bottom: 8px;
         font-size: 40px;
         font-weight: 800;
-        color: var(--about-brand);
         line-height: 1;
-        margin-bottom: 8px;
+        color: var(--about-brand);
 }
 
 .stat-note {
@@ -456,20 +456,20 @@
         }
 }
 .about-moments {
-        background: #fff;
-        padding: 40px 48px;
         position: relative;
+        padding: 40px 48px;
+        background: #fff;
 }
 .about-moments::before {
-        content: "";
         position: absolute;
         top: 0;
         left: 50%;
-        transform: translateX(-50%);
         width: 100%;
         max-width: 1200px;
         height: 1px;
+        content: "";
         background: #eee;
+        transform: translateX(-50%);
 }
 
 .moments-inner {
@@ -478,21 +478,21 @@
         text-align: center;
 }
 .moments-heading {
+        margin-bottom: 8px;
         font-size: 36px;
         font-weight: 800;
         line-height: 1.25;
-        margin-bottom: 8px;
         color: var(--about-blue);
 }
 .moments-heading span {
         color: var(--about-brand);
 }
 .moments-sub {
-        font-size: 15px;
-        color: #5a6191;
         max-width: 720px;
         margin: 0 auto 28px;
+        font-size: 15px;
         line-height: 1.6;
+        color: #5a6191;
 }
 
 .moments-gallery {
@@ -506,12 +506,12 @@
         margin-top: 28px;
 }
 .btn-viewmore {
-        background: var(--about-brand);
-        color: #fff;
         padding: 10px 20px;
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #fff;
+        cursor: pointer;
+        background: var(--about-brand);
         border: none;
         border-radius: 6px;
-        font-weight: 700;
-        cursor: pointer;
-        font-size: 1.5em;
 }

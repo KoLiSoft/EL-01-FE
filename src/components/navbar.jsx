@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "../style/navbar.css";
-import Registerstd from "../pages/register-std";
-import Login from "../pages/login";
 import ForgotPassword from "../components/ForgotPassword";
+import Login from "../pages/login";
+import Registerstd from "../pages/register-std";
 
 export default function Navbar() {
         const [isOpenStd, setIsOpenStd] = useState(false);
@@ -13,7 +13,7 @@ export default function Navbar() {
                         <header className="navbar">
                                 <div className="navbar-container">
                                         <div className="navbar-logo">
-                                                <img src="/logo.svg" alt="EdulinkTutor Logo" />
+                                                <img alt="EdulinkTutor Logo" src="/logo.svg" />
                                         </div>
                                         <nav className="navbar-links">
                                                 <a href="/">Trang chủ</a>
@@ -26,17 +26,17 @@ export default function Navbar() {
                                         </nav>
                                         <div className="navbar-buttons">
                                                 <button
-                                                        onClick={() => setIsOpenStd(true)}
                                                         className="btn-navbar btn-outline"
+                                                        onClick={() => setIsOpenStd(true)}
                                                 >
                                                         Đăng ký làm giáo viên/học sinh
                                                 </button>
                                                 <button
+                                                        className="btn-navbar btn-outline"
                                                         onClick={() => {
                                                                 setIsOpenTeacher(true);
                                                                 setIsForgotPassword(false);
                                                         }}
-                                                        className="btn-navbar btn-outline"
                                                 >
                                                         Đăng Nhập
                                                 </button>

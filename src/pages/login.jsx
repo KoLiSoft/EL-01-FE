@@ -1,14 +1,19 @@
-import { useState, useEffect, useRef } from "react";
+import { EnvelopeIcon, EyeIcon, EyeSlashIcon, PasswordIcon } from "@phosphor-icons/react/dist/ssr";
+import { useEffect, useRef, useState } from "react";
 import googleIcon from "../assets/img/gg.svg";
-import EmailIcon from "../assets/img/email.svg";
-import LockIcon from "../assets/img/lock.svg";
-import EyeIcon from "../assets/img/eye.svg";
-import EyeOffIcon from "../assets/img/eye-off.svg";
+import { login } from "../hooks/auth.hooks.js";
 import "../style/login.css";
 
 export default function Login({ onForgotPassword, onRegisterClick }) {
         const [showPassword, setShowPassword] = useState(false);
         const [isGoogleReady, setIsGoogleReady] = useState(false);
+        const [formData, setFormData] = useState({
+                email: "",
+                password: "",
+        });
+        const [isLoading, setIsLoading] = useState(false);
+        const [error, setError] = useState("");
+        const [success, setSuccess] = useState("");
         const codeClientRef = useRef(null);
 
         useEffect(() => {
@@ -18,20 +23,18 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                 script.onload = () => {
                         if (!window.google) return;
 
-                        // KHÔNG render button của Google; dùng Code Client để giữ CSS nút của bạn
                         codeClientRef.current = window.google.accounts.oauth2.initCodeClient({
-                                client_id: "762402414334-v8bli07pq1u6287h28691qg3ffbr5ao1.apps.googleusercontent.com",
-                                scope: "openid email profile",
-                                ux_mode: "popup",
-                                callback: async (res) => {
-                                        // Nhận authorization code -> gửi server để exchange token
-                                        console.log("Google auth code:", res.code);
+                                callback: async () => {
+                                        // TODO: Implement Google OAuth login
                                         // await fetch("/api/auth/google", {
                                         //   method: "POST",
                                         //   headers: { "Content-Type": "application/json" },
                                         //   body: JSON.stringify({ code: res.code }),
                                         // });
                                 },
+                                client_id: "762402414334-v8bli07pq1u6287h28691qg3ffbr5ao1.apps.googleusercontent.com",
+                                scope: "openid email profile",
+                                ux_mode: "popup",
                         });
                         setIsGoogleReady(true);
                 };
@@ -39,9 +42,47 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                 return () => document.body.removeChild(script);
         }, []);
 
+        const handleInputChange = (e) => {
+                const { name, value, type, checked } = e.target;
+                setFormData((prev) => ({
+                        ...prev,
+                        [name]: type === "checkbox" ? checked : value,
+                }));
+                setError("");
+        };
+
         const handleGoogleLogin = () => {
                 if (codeClientRef.current) codeClientRef.current.requestCode();
         };
+
+        const handleSubmit = async (e) => {
+                e.preventDefault();
+
+                if (!formData.email || !formData.password) {
+                        setError("Vui lòng nhập đầy đủ email và mật khẩu");
+                        return;
+                }
+
+                setIsLoading(true);
+                setError("");
+                setSuccess("");
+
+                try {
+                        const response = await login(formData.email, formData.password);
+
+                        if (response) {
+                                setSuccess("Đăng nhập thành công!");
+
+                                localStorage.setItem("token", response.token);
+                        }
+                } catch (err) {
+                        const errorMessage = err.response?.message || "Đăng nhập thất bại. Vui lòng thử lại.";
+                        setError(errorMessage);
+                } finally {
+                        setIsLoading(false);
+                }
+        };
+
         return (
                 <div className="login-wrap">
                         <div className="login-card">
@@ -53,19 +94,45 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                                                         <span className="highlight-orange">Dẫn</span> lối tương lai
                                                 </span>
                                         </p>
-                                        <img src="/img/Group 1.png" alt="Học sinh" />
+                                        <img alt="Học sinh" src="/img/Group 1.png" />
                                 </div>
-                                {/* RIGHT */}
+
                                 <div className="login-right">
                                         <h3>Giáo viên đăng nhập</h3>
 
+                                        {error && (
+                                                <div
+                                                        className="error-message"
+                                                        style={{
+                                                                color: "red",
+                                                                marginBottom: "1rem",
+                                                                textAlign: "center",
+                                                        }}
+                                                >
+                                                        {error}
+                                                </div>
+                                        )}
+
+                                        {success && (
+                                                <div
+                                                        className="success-message"
+                                                        style={{
+                                                                color: "green",
+                                                                marginBottom: "1rem",
+                                                                textAlign: "center",
+                                                        }}
+                                                >
+                                                        {success}
+                                                </div>
+                                        )}
+
                                         <button
-                                                type="button"
                                                 className="google-btn"
+                                                disabled={!isGoogleReady || isLoading}
                                                 onClick={handleGoogleLogin}
-                                                disabled={!isGoogleReady}
+                                                type="button"
                                         >
-                                                <img src={googleIcon} alt="Google" />
+                                                <img alt="Google" src={googleIcon} />
                                                 Tiếp tục với tài khoản Google
                                         </button>
 
@@ -73,33 +140,48 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                                                 <span>Hoặc</span>
                                         </div>
 
-                                        <form className="login-form">
+                                        <form className="login-form" onSubmit={handleSubmit}>
                                                 <label className="input-group">
-                                                        <img className="input-icon" src={EmailIcon} alt="" />
-                                                        <input type="email" placeholder="Email ID" />
-                                                </label>
-
-                                                <label className="input-group">
-                                                        <img className="input-icon" src={LockIcon} alt="" />
+                                                        <EnvelopeIcon alt="" className="input-icon" />
                                                         <input
-                                                                type={showPassword ? "text" : "password"}
+                                                                disabled={isLoading}
+                                                                name="email"
+                                                                onChange={handleInputChange}
+                                                                placeholder="Email ID"
+                                                                type="email"
+                                                                value={formData.email}
+                                                        />
+                                                </label>
+
+                                                <label className="input-group">
+                                                        <PasswordIcon alt="" className="input-icon" />
+                                                        <input
+                                                                disabled={isLoading}
+                                                                name="password"
+                                                                onChange={handleInputChange}
                                                                 placeholder="Mật khẩu"
+                                                                type={showPassword ? "text" : "password"}
+                                                                value={formData.password}
                                                         />
-                                                        <img
-                                                                className="toggle-eye"
-                                                                src={showPassword ? EyeOffIcon : EyeIcon}
-                                                                alt="toggle"
-                                                                onClick={() => setShowPassword((v) => !v)}
-                                                        />
+                                                        {showPassword ? (
+                                                                <EyeIcon
+                                                                        alt="toggle"
+                                                                        className="toggle-eye"
+                                                                        onClick={() => setShowPassword((v) => !v)}
+                                                                        style={{ cursor: "pointer" }}
+                                                                />
+                                                        ) : (
+                                                                <EyeSlashIcon
+                                                                        alt="toggle"
+                                                                        className="toggle-eye"
+                                                                        onClick={() => setShowPassword((v) => !v)}
+                                                                        style={{ cursor: "pointer" }}
+                                                                />
+                                                        )}
                                                 </label>
 
-                                                <label className="agree">
-                                                        <input type="checkbox" />
-                                                        Đồng ý <a href="#">Thỏa thuận sử dụng</a> bởi Edulinktutor
-                                                </label>
-
-                                                <button type="submit" className="submit-btn">
-                                                        Đăng nhập
+                                                <button className="submit-btn" disabled={isLoading} type="submit">
+                                                        {isLoading ? "Đang đăng nhập..." : "Đăng nhập"}
                                                 </button>
 
                                                 <div className="muted">

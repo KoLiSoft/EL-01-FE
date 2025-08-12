@@ -1,12 +1,12 @@
 .listing-layout {
         --sidebar-w: 320px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 12px 16px 24px;
         display: grid;
         grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
         gap: 20px;
         align-items: start;
+        max-width: 1200px;
+        padding: 12px 16px 24px;
+        margin: 0 auto;
 }
 
 .filter-pane {
@@ -14,8 +14,8 @@
         top: 16px;
         align-self: start;
         max-height: calc(100vh - 16px);
-        overflow: auto;
         padding-right: 2px;
+        overflow: auto;
 }
 
 .filter-pane .sidebar-page {
