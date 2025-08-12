@@ -8,19 +8,19 @@ export default function ProfileStd() {
                 <div className="prstd profile-std">
                         <aside className="prstd__sidebar">
                                 <div className="prstd__sidebar-avatar">
-                                        <img src={img1} alt="" />
+                                        <img alt="" src={img1} />
                                 </div>
                                 <nav className="prstd__sidebar-nav">
-                                        <NavLink end to="" className={cx}>
+                                        <NavLink className={cx} end to="">
                                                 Thông tin cá nhân
                                         </NavLink>
-                                        <NavLink to="docs" className={cx}>
+                                        <NavLink aria-disabled={true} className={cx} to="docs">
                                                 Tài liệu
                                         </NavLink>
-                                        <NavLink to="settings" className={cx}>
+                                        <NavLink className={cx} to="settings">
                                                 Cài đặt
                                         </NavLink>
-                                        <NavLink to="wallet" className={cx}>
+                                        <NavLink aria-disabled={true} className={cx} to="wallet">
                                                 Ví
                                         </NavLink>
                                 </nav>

@@ -43,10 +43,7 @@ function App() {
                                         <Route element={<ProfileStdInfo />} path="/profilestdinfo" />
                                         <Route element={<Service />} path="/service" />
                                         <Route element={<ProfileStd />} path="/profile-std">
-                                                {/* Trang thông tin cá nhân */}
                                                 <Route element={<ProfileStdInfo />} index />
-
-                                                {/* Cụm Ví (giao dịch) dưới /profile-std/wallet */}
                                                 <Route path="wallet">
                                                         <Route element={<Transactions />} index />
                                                         <Route element={<TopUp />} path="topup" />
@@ -55,7 +52,6 @@ function App() {
                                                 </Route>
                                         </Route>
 
-                                        {/* Redirect từ các route cũ (để không mất SEO/link cũ) */}
                                         <Route
                                                 element={<Navigate replace to="/profile-std/wallet" />}
                                                 path="/transactions"
@@ -73,7 +69,6 @@ function App() {
                                                 path="/ewallet"
                                         />
 
-                                        {/* Fallback */}
                                         <Route element={<Navigate replace to="/" />} path="*" />
                                 </Routes>
                                 <Footer />

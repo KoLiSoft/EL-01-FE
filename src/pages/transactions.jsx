@@ -1,18 +1,34 @@
+import { useEffect, useState } from "react";
 import "../style/transactions.css";
 import { NavLink } from "react-router-dom";
+import { getWallet } from "../hooks/auth.hooks.js";
+import { config } from "../lib/config.js";
 
 export default function Transactions() {
+        const [wallet, setWallet] = useState(null);
+        useEffect(() => {
+                const fetchWallet = async () => {
+                        const response = await getWallet();
+                        setWallet(response.data);
+                };
+                fetchWallet();
+        }, []);
+
+        if (!wallet) {
+                return <div>Loading...</div>;
+        }
+
         return (
                 <div className="trxn">
                         {/* Tabs */}
                         <div className="trxn__tabs">
-                                <NavLink end to="" className="trxn__tab">
+                                <NavLink className="trxn__tab" end to="">
                                         Lịch sử giao dịch
                                 </NavLink>
-                                <NavLink to="topup" className="trxn__tab">
+                                <NavLink className="trxn__tab" to="topup">
                                         Nạp tiền
                                 </NavLink>
-                                <NavLink to="withdraw" className="trxn__tab">
+                                <NavLink className="trxn__tab" to="withdraw">
                                         Rút tiền
                                 </NavLink>
                                 {/* <button className="trxn__tab">Quá trình học</button> */}
@@ -52,8 +68,13 @@ export default function Transactions() {
 
                                 {/* Balance card floating */}
                                 <aside className="trxn__balance">
-                                        <div className="trxn__balance-amt">7.000.000 VND</div>
-                                        <NavLink to="/topup" className="trxn__balance-add">
+                                        <div className="trxn__balance-amt">
+                                                {wallet?.balance?.toLocaleString(config.locale, {
+                                                        currency: config.currency,
+                                                        style: "currency",
+                                                })}
+                                        </div>
+                                        <NavLink className="trxn__balance-add" to="/topup">
                                                 Nạp tiền
                                         </NavLink>
                                 </aside>

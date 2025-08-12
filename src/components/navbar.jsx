@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../style/navbar.css";
 import ForgotPassword from "../components/ForgotPassword";
 import Login from "../pages/login";
 import Registerstd from "../pages/register-std";
 
 export default function Navbar() {
+        const navigate = useNavigate();
         const [isOpenStd, setIsOpenStd] = useState(false);
         const [isOpenTeacher, setIsOpenTeacher] = useState(false);
         const [isForgotPassword, setIsForgotPassword] = useState(false);
@@ -16,13 +18,13 @@ export default function Navbar() {
                                                 <img alt="EdulinkTutor Logo" src="/logo.svg" />
                                         </div>
                                         <nav className="navbar-links">
-                                                <a href="/">Trang chủ</a>
-                                                <a href="/about">Giới thiệu</a>
-                                                <a href="/service">Dịch vụ</a>
-                                                <a href="/teacher-team">Đội ngũ giáo viên</a>
-                                                <a href="/course">Gói học</a>
-                                                <a href="#">Blog</a>
-                                                <a href="#">Liên hệ</a>
+                                                <span onClick={() => navigate("/")}>Trang chủ</span>
+                                                <span onClick={() => navigate("/about")}>Giới thiệu</span>
+                                                <span onClick={() => navigate("/service")}>Dịch vụ</span>
+                                                <span onClick={() => navigate("/teacher-team")}>Đội ngũ giáo viên</span>
+                                                <span onClick={() => navigate("/course")}>Gói học</span>
+                                                <span>Blog</span>
+                                                <span>Liên hệ</span>
                                         </nav>
                                         <div className="navbar-buttons">
                                                 <button

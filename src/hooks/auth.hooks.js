@@ -24,3 +24,21 @@ export const register = async (params) => {
         const response = await apiClient.post("/users/register", params);
         return response;
 };
+
+/**
+ * Get my profile API
+ * @returns {Promise<AxiosResponse>}
+ */
+export const getProfile = async () => {
+        const response = await apiClient.get("/users/profile");
+        return response;
+};
+
+/**
+ * Get my wallet API
+ * @returns {Promise<AxiosResponse>}
+ */
+export const getWallet = async () => {
+        const response = await apiClient.get("/wallets/me");
+        return response;
+};

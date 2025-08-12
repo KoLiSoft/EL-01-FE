@@ -6,7 +6,7 @@ export default function ProfileTc() {
                         {/* Sidebar */}
                         <aside className="prtc__sidebar">
                                 <div className="prtc__sidebar-avatar">
-                                        <img src="https://i.pravatar.cc/100?img=65" alt="avatar" />
+                                        <img alt="avatar" src="https://i.pravatar.cc/100?img=65" />
                                 </div>
                                 <nav className="prtc__sidebar-nav">
                                         <a className="prtc__nav-item prtc__nav-item--active" href="#">
@@ -30,7 +30,7 @@ export default function ProfileTc() {
                                         {/* Welcome */}
                                         <header className="prtc__welcome">
                                                 <div className="prtc__welcome-avatar">
-                                                        <img src="https://i.pravatar.cc/100?img=5" alt="user" />
+                                                        <img alt="user" src="https://i.pravatar.cc/100?img=5" />
                                                 </div>
                                                 <div className="prtc__welcome-text">
                                                         <h3>Welcome LinLin!</h3>

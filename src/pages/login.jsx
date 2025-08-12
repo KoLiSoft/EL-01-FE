@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import googleIcon from "../assets/img/gg.svg";
 import { login } from "../hooks/auth.hooks.js";
 import "../style/login.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Login({ onForgotPassword, onRegisterClick }) {
         const [showPassword, setShowPassword] = useState(false);
@@ -15,6 +16,7 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
         const [error, setError] = useState("");
         const [success, setSuccess] = useState("");
         const codeClientRef = useRef(null);
+        const navigate = useNavigate();
 
         useEffect(() => {
                 const script = document.createElement("script");
@@ -72,8 +74,11 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
 
                         if (response) {
                                 setSuccess("Đăng nhập thành công!");
-
                                 localStorage.setItem("token", response.token);
+                                navigate("/profile-std");
+                                // hide this page
+
+                                return;
                         }
                 } catch (err) {
                         const errorMessage = err.response?.message || "Đăng nhập thất bại. Vui lòng thử lại.";
