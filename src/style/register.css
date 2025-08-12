@@ -1,116 +1,116 @@
 .register-container {
-	display: flex;
-	background: #fff;
-	border-radius: 10px;
-	overflow: hidden;
+        display: flex;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
 }
 
 .register-left {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
 }
 
 .register-left .highlight {
-	color: #f97316;
-	font-weight: bold;
+        color: #f97316;
+        font-weight: bold;
 }
 
 .register-left img {
-	max-width: 330px;
+        max-width: 330px;
 }
 
 .register-right {
-	flex: 1;
-	padding: 20px;
-	display: flex;
-	flex-direction: column;
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
 }
 
 .register-form {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-	width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
 }
 
 .input-group {
-	position: relative;
-	display: flex;
-	align-items: center;
-	background: #fff;
-	border-radius: 12px;
-	padding: 10px 14px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 12px;
+        padding: 10px 14px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .input-icon {
-	width: 18px;
-	height: 18px;
-	margin-right: 8px;
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
 }
 .register-right h3 {
-	color: #0a0a5c;
-	text-align: center;
-	font-size: 1.5em;
-	font-weight: bold;
-	margin-bottom: 15px;
+        color: #0a0a5c;
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 15px;
 }
 .input-group input {
-	border: none;
-	outline: none;
-	flex: 1;
-	font-size: 14px;
-	padding: 6px 0;
-	border-bottom: 1px solid #0b0b65;
-	background: transparent;
+        border: none;
+        outline: none;
+        flex: 1;
+        font-size: 14px;
+        padding: 6px 0;
+        border-bottom: 1px solid #0b0b65;
+        background: transparent;
 }
 
 .input-group input::placeholder {
-	color: #666;
+        color: #666;
 }
 
 .checkbox-label {
-	font-size: 13px;
-	display: flex;
-	align-items: center;
-	gap: 6px;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
 }
 
 .checkbox-label a {
-	color: #0b0b65;
-	text-decoration: none;
+        color: #0b0b65;
+        text-decoration: none;
 }
 
 .submit-btn {
-	background: #0b0b65;
-	color: #fff;
-	border: none;
-	padding: 12px;
-	border-radius: 6px;
-	font-size: 14px;
-	cursor: pointer;
+        background: #0b0b65;
+        color: #fff;
+        border: none;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
 }
 
 .submit-btn:hover {
-	opacity: 0.9;
+        opacity: 0.9;
 }
 .phone-input {
-	width: 100% !important;
-	border-radius: 12px !important;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-	padding-left: 50px !important;
-	height: 44px !important;
-	font-size: 14px !important;
-	border: none !important;
+        width: 100% !important;
+        border-radius: 12px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding-left: 50px !important;
+        height: 44px !important;
+        font-size: 14px !important;
+        border: none !important;
 }
 
 .phone-dropdown {
-	border: none !important;
-	background: transparent !important;
+        border: none !important;
+        background: transparent !important;
 }
 
 /* .google-btn {
@@ -142,52 +142,52 @@
 } */
 
 .submit-btn {
-	background: #0a0a5c;
-	color: white;
-	padding: 10px;
-	border: none;
-	border-radius: 5px;
+        background: #0a0a5c;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
 }
 .divider {
-	display: flex;
-	align-items: center;
-	text-align: center;
-	color: #333;
-	font-size: 14px;
-	margin: 20px 0;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #333;
+        font-size: 14px;
+        margin: 20px 0;
 }
 
 .divider::before,
 .divider::after {
-	content: "";
-	flex: 1;
-	border-bottom: 1px solid #ccc;
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid #ccc;
 }
 
 .divider:not(:empty)::before {
-	margin-right: 10px;
+        margin-right: 10px;
 }
 
 .divider:not(:empty)::after {
-	margin-left: 10px;
+        margin-left: 10px;
 }
 .toggle-password {
-	position: absolute;
-	right: 10px;
-	top: 50%;
-	transform: translateY(-50%);
-	cursor: pointer;
-	width: 18px;
-	height: 18px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
 }
 
 .input-group {
-	position: relative;
-	display: flex;
-	align-items: center;
+        position: relative;
+        display: flex;
+        align-items: center;
 }
 
 .input-group input {
-	flex: 1;
-	padding-right: 35px;
+        flex: 1;
+        padding-right: 35px;
 }

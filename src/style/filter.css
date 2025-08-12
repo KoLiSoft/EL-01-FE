@@ -1,328 +1,328 @@
 :root {
-	--bg: #f6f7fb;
-	--card: #fff;
-	--text: #1f2a37;
-	--muted: #6b7280;
-	--line: #e5e7eb;
-	--shadow: 0 8px 22px rgba(17, 24, 39, 0.06);
-	--accent: #0b1e65; /* xanh đậm cho nút áp dụng */
-	--brand: #ff8a00; /* cam cho slider */
+        --bg: #f6f7fb;
+        --card: #fff;
+        --text: #1f2a37;
+        --muted: #6b7280;
+        --line: #e5e7eb;
+        --shadow: 0 8px 22px rgba(17, 24, 39, 0.06);
+        --accent: #0b1e65; /* xanh đậm cho nút áp dụng */
+        --brand: #ff8a00; /* cam cho slider */
 }
 
 /* ====== Trang tổng ====== */
 .page-root {
-	background: var(--bg);
-	color: var(--text);
-	min-height: 100vh;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
 }
 .container {
-	max-width: 1180px;
-	margin: 0 auto;
-	padding: 16px 20px;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 16px 20px;
 }
 
 /* ====== Bố cục hai cột ====== */
 .layout {
-	display: grid;
-	grid-template-columns: 280px 1fr;
-	gap: 16px;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 16px;
 }
 @media (max-width: 1024px) {
-	.layout {
-		grid-template-columns: 1fr;
-	}
+        .layout {
+                grid-template-columns: 1fr;
+        }
 }
 
 /* ====== Sidebar: TRANG FILTER ====== */
 .sidebar-page {
-	position: sticky;
-	top: 16px;
-	height: max-content;
-	width: 100%;
-	background: var(--card);
-	border: 1px solid var(--line);
-	border-radius: 12px;
-	box-shadow: var(--shadow);
-	padding: 12px;
+        position: sticky;
+        top: 16px;
+        height: max-content;
+        width: 100%;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        padding: 12px;
 }
 
 /* thanh tìm kiếm trên cùng */
 .search-input {
-	width: 100%;
-	height: 34px;
-	border: 1px solid var(--line);
-	border-radius: 8px;
-	padding: 0 30px 0 10px;
-	outline: none;
+        width: 100%;
+        height: 34px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 0 30px 0 10px;
+        outline: none;
 }
 .search-input::placeholder {
-	color: #9ca3af;
+        color: #9ca3af;
 }
 .search-input {
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
-	background-repeat: no-repeat;
-	background-position: right 8px center;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 8px center;
 }
 
 /* Nhóm bộ lọc như thẻ (card) nhỏ */
 .filter-group {
-	background: #fff;
-	border: 1px solid var(--line);
-	border-radius: 10px;
-	margin: 12px 0;
-	overflow: hidden;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        margin: 12px 0;
+        overflow: hidden;
 }
 .filter-title {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	font-size: 14px;
-	font-weight: 700;
-	padding: 10px 12px;
-	background: #fafafa;
-	border-bottom: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 10px 12px;
+        background: #fafafa;
+        border-bottom: 1px solid var(--line);
 }
 .filter-title::after {
-	content: "";
-	width: 8px;
-	height: 8px;
-	border-right: 2px solid #9ca3af;
-	border-bottom: 2px solid #9ca3af;
-	transform: rotate(45deg);
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid #9ca3af;
+        border-bottom: 2px solid #9ca3af;
+        transform: rotate(45deg);
 }
 
 /* phần thân danh sách chọn */
 .check-list {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 6px 10px;
-	max-height: 220px;
-	overflow: auto;
-	padding: 10px 12px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px 10px;
+        max-height: 220px;
+        overflow: auto;
+        padding: 10px 12px;
 }
 .check {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	color: var(--muted);
-	font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 13px;
 }
 .check input {
-	width: 14px;
-	height: 14px;
+        width: 14px;
+        height: 14px;
 }
 .check input:disabled {
-	opacity: 0.45;
+        opacity: 0.45;
 }
 
 /* nhóm có 1 cột */
 .filter-group.one-col .check-list {
-	grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
 }
 /* nhóm rất dài: tăng chiều cao trước khi scroll */
 .filter-group.tall .check-list {
-	max-height: 300px;
+        max-height: 300px;
 }
 
 /* custom scrollbar nhẹ nhàng */
 .check-list::-webkit-scrollbar {
-	width: 8px;
+        width: 8px;
 }
 .check-list::-webkit-scrollbar-thumb {
-	background: #e5e7eb;
-	border-radius: 6px;
+        background: #e5e7eb;
+        border-radius: 6px;
 }
 
 /* vùng range / inputs phụ */
 .range {
-	display: grid;
-	gap: 8px;
-	padding: 10px 12px;
+        display: grid;
+        gap: 8px;
+        padding: 10px 12px;
 }
 .range input[type="text"],
 .range input[type="number"],
 .range select {
-	width: 100%;
-	height: 34px;
-	border: 1px solid var(--line);
-	border-radius: 8px;
-	padding: 0 10px;
+        width: 100%;
+        height: 34px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 0 10px;
 }
 
 /* Slider mặc định cho Độ tuổi, Học phí/giờ nếu dùng input[type=range] */
 .range input[type="range"] {
-	appearance: none;
-	-webkit-appearance: none;
-	height: 4px;
-	border-radius: 999px;
-	background: #e5e7eb;
-	outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+        height: 4px;
+        border-radius: 999px;
+        background: #e5e7eb;
+        outline: none;
 }
 .range input[type="range"]::-webkit-slider-thumb {
-	appearance: none;
-	-webkit-appearance: none;
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	background: var(--brand);
-	cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--brand);
+        cursor: pointer;
 }
 .range input[type="range"]::-moz-range-thumb {
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	background: var(--brand);
-	border: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--brand);
+        border: none;
 }
 
 /* nút áp dụng */
 .apply {
-	margin-top: 8px;
-	width: 100%;
-	height: 40px;
-	background: var(--accent);
-	color: #fff;
-	border: none;
-	border-radius: 10px;
-	font-weight: 700;
-	cursor: pointer;
-	box-shadow: 0 6px 14px rgba(11, 30, 101, 0.25);
+        margin-top: 8px;
+        width: 100%;
+        height: 40px;
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 6px 14px rgba(11, 30, 101, 0.25);
 }
 .apply:hover {
-	filter: brightness(0.95);
+        filter: brightness(0.95);
 }
 
 /* ====== Phần danh sách (trang phải) giữ nguyên các class cũ, để không ảnh hưởng tới Filter ====== */
 .content-page {
-	min-width: 0;
+        min-width: 0;
 }
 .topbar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
 }
 .sort {
-	position: relative;
+        position: relative;
 }
 .sort-btn {
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	background: #fff;
-	border: 1px solid var(--line);
-	padding: 8px 12px;
-	border-radius: 8px;
-	cursor: pointer;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        border: 1px solid var(--line);
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 .sort-menu {
-	position: absolute;
-	right: 0;
-	top: 42px;
-	width: 180px;
-	background: #fff;
-	border: 1px solid var(--line);
-	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-	border-radius: 10px;
-	overflow: hidden;
-	z-index: 10;
+        position: absolute;
+        right: 0;
+        top: 42px;
+        width: 180px;
+        background: #fff;
+        border: 1px solid var(--line);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 10;
 }
 .sort-item {
-	padding: 10px 12px;
-	font-size: 14px;
-	cursor: pointer;
+        padding: 10px 12px;
+        font-size: 14px;
+        cursor: pointer;
 }
 .sort-item:hover {
-	background: #f3f4f6;
+        background: #f3f4f6;
 }
 
 /* (giữ các class cho card danh sách nếu cần dùng lại) */
 .list {
-	display: flex;
-	flex-direction: column;
-	gap: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
 }
 .card {
-	background: var(--card);
-	border: 1px solid var(--line);
-	border-radius: 14px;
-	box-shadow: var(--shadow);
-	padding: 12px 14px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        padding: 12px 14px;
 }
 .row {
-	display: grid;
-	grid-template-columns: 64px 1fr 220px 92px;
-	gap: 12px;
-	align-items: start;
+        display: grid;
+        grid-template-columns: 64px 1fr 220px 92px;
+        gap: 12px;
+        align-items: start;
 }
 .avatar {
-	width: 48px;
-	height: 48px;
-	border-radius: 50%;
-	background: linear-gradient(135deg, #e2e8f0, #f9fafb);
-	border: 1px solid var(--line);
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #e2e8f0, #f9fafb);
+        border: 1px solid var(--line);
 }
 .meta {
-	display: flex;
-	gap: 8px;
-	align-items: center;
+        display: flex;
+        gap: 8px;
+        align-items: center;
 }
 .name {
-	font-weight: 700;
+        font-weight: 700;
 }
 .muted {
-	color: var(--muted);
-	font-size: 12px;
+        color: var(--muted);
+        font-size: 12px;
 }
 .pill {
-	display: inline-block;
-	font-size: 11px;
-	color: #111827;
-	background: #f3f4f6;
-	border: 1px solid #e5e7eb;
-	padding: 4px 6px;
-	border-radius: 7px;
-	margin-right: 6px;
-	margin-bottom: 6px;
+        display: inline-block;
+        font-size: 11px;
+        color: #111827;
+        background: #f3f4f6;
+        border: 1px solid #e5e7eb;
+        padding: 4px 6px;
+        border-radius: 7px;
+        margin-right: 6px;
+        margin-bottom: 6px;
 }
 .info {
-	font-size: 12px;
+        font-size: 12px;
 }
 .info .label {
-	color: var(--muted);
+        color: var(--muted);
 }
 .act {
-	display: flex;
-	gap: 8px;
-	align-items: center;
-	justify-content: flex-end;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: flex-end;
 }
 .stars {
-	color: #f59e0b;
-	font-size: 12px;
+        color: #f59e0b;
+        font-size: 12px;
 }
 .pager {
-	display: flex;
-	justify-content: center;
-	gap: 8px;
-	padding: 8px 0 32px;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 8px 0 32px;
 }
 .dot {
-	width: 6px;
-	height: 6px;
-	border-radius: 999px;
-	background: #cbd5e1;
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: #cbd5e1;
 }
 .dot.active {
-	background: #1f2937;
+        background: #1f2937;
 }
 
 @media (max-width: 1024px) {
-	.row {
-		grid-template-columns: 56px 1fr;
-	}
-	.act {
-		justify-content: flex-start;
-	}
+        .row {
+                grid-template-columns: 56px 1fr;
+        }
+        .act {
+                justify-content: flex-start;
+        }
 }
