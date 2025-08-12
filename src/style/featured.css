@@ -1,243 +1,325 @@
-.featured-courses{
-  /* token cục bộ cho section này */
-  --fc-navy:#10146B;
-  --fc-brand:#ff7a00;          /* màu EDULINKTUTOR + CTA */
-  --fc-primary:#2b4eff;        /* màu giá */
-  --fc-star:#ffc83d;
-  --fc-text:#10146B;
-  --fc-muted:#5b6470;
-  --fc-card-bg:#fff;
-  --fc-radius:14px;
-  --fc-shadow:0 1px 2px rgba(16,24,40,.06), 0 10px 30px rgba(10,18,80,.12);
+.featured-courses {
+	/* token cục bộ cho section này */
+	--fc-navy: #10146b;
+	--fc-brand: #ff7a00; /* màu EDULINKTUTOR + CTA */
+	--fc-primary: #2b4eff; /* màu giá */
+	--fc-star: #ffc83d;
+	--fc-text: #10146b;
+	--fc-muted: #5b6470;
+	--fc-card-bg: #fff;
+	--fc-radius: 14px;
+	--fc-shadow:
+		0 1px 2px rgba(16, 24, 40, 0.06), 0 10px 30px rgba(10, 18, 80, 0.12);
 
-  position: relative;
-  padding: 48px 0 56px;
-  isolation: isolate;          /* tách nền với pseudo */
+	position: relative;
+	padding: 48px 0 56px;
+	isolation: isolate; /* tách nền với pseudo */
 }
 
 /* Nền xanh đậm nửa dưới */
-.featured-courses::after{
-  content:"";
-  position:absolute;
-  inset:auto 0 0 0;
-  top:65%;
-  background: var(--fc-navy);
-  z-index:-1;
+.featured-courses::after {
+	content: "";
+	position: absolute;
+	inset: auto 0 0 0;
+	top: 65%;
+	background: var(--fc-navy);
+	z-index: -1;
 }
 
-.featured-courses .fc-container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 16px;
+.featured-courses .fc-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 16px;
 }
 
 /* Heading 2 dòng */
-.featured-courses .fc-heading{
-  margin:0 0 18px;
-  line-height:1.1;
-  letter-spacing:.01em;
+.featured-courses .fc-heading {
+	margin: 0 0 18px;
+	line-height: 1.1;
+	letter-spacing: 0.01em;
 }
-.featured-courses .fc-heading>span:first-child{
-  display:block;
-  font-size:clamp(26px, 4vw, 44px);
-  font-weight:800;
-  color:var(--fc-text);
+.featured-courses .fc-heading > span:first-child {
+	display: block;
+	font-size: clamp(26px, 4vw, 44px);
+	font-weight: 800;
+	color: var(--fc-text);
 }
-.featured-courses .fc-brand{
-  display:block;
-  font-size:clamp(28px, 4.4vw, 46px);
-  color:var(--fc-brand);
-  letter-spacing:.06em;
+.featured-courses .fc-brand {
+	display: block;
+	font-size: clamp(28px, 4.4vw, 46px);
+	color: var(--fc-brand);
+	letter-spacing: 0.06em;
 }
 
 /* Grid 3 card */
-.featured-courses .fc-grid{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(260px,1fr));
-  gap:22px;
-  margin-top:8px;
+.featured-courses .fc-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(260px, 1fr));
+	gap: 22px;
+	margin-top: 8px;
 }
 
 /* Card */
-.featured-courses .fc-card{
-  background:var(--fc-card-bg);
-  border-radius:var(--fc-radius);
-  box-shadow:var(--fc-shadow);
-  border:1px solid #eef2ff;
-  padding:16px 18px 14px;
+.featured-courses .fc-card {
+	background: var(--fc-card-bg);
+	border-radius: var(--fc-radius);
+	box-shadow: var(--fc-shadow);
+	border: 1px solid #eef2ff;
+	padding: 16px 18px 14px;
 }
-.featured-courses .fc-card__head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:6px;
+.featured-courses .fc-card__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 6px;
 }
-.featured-courses .fc-title{
-  display:flex;
-  align-items:center;
-  gap:8px;
+.featured-courses .fc-title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
-.featured-courses .fc-title h3{
-  margin:0;
-  font-size:16.5px;
-  font-weight:800;
-  color:var(--fc-text);
+.featured-courses .fc-title h3 {
+	margin: 0;
+	font-size: 16.5px;
+	font-weight: 800;
+	color: var(--fc-text);
 }
-.featured-courses .fc-dot{
-  width:10px;height:10px;border-radius:50%;
-  background: radial-gradient(circle at 30% 30%, #ff9ad1, #ff5280 70%);
-  box-shadow:0 0 0 3px #ffe6f0 inset;
+.featured-courses .fc-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: radial-gradient(circle at 30% 30%, #ff9ad1, #ff5280 70%);
+	box-shadow: 0 0 0 3px #ffe6f0 inset;
 }
-.featured-courses .fc-rating{
-  color:var(--fc-star);
-  font-size:14px;
-  letter-spacing:.08em;
-  white-space:nowrap;
+.featured-courses .fc-rating {
+	color: var(--fc-star);
+	font-size: 14px;
+	letter-spacing: 0.08em;
+	white-space: nowrap;
 }
-.featured-courses .fc-desc{
-  color:var(--fc-muted);
-  font-size:14px;
-  line-height:1.55;
-  margin:0 0 8px;
+.featured-courses .fc-desc {
+	color: var(--fc-muted);
+	font-size: 14px;
+	line-height: 1.55;
+	margin: 0 0 8px;
 }
 
 /* Meta list */
-.featured-courses .fc-meta{
-  list-style:none;
-  padding:0;
-  margin:0 0 10px;
-  display:grid;
-  gap:6px;
+.featured-courses .fc-meta {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 10px;
+	display: grid;
+	gap: 6px;
 }
-.featured-courses .fc-meta li{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:14px;
-  color:var(--fc-muted);
+.featured-courses .fc-meta li {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 14px;
+	color: var(--fc-muted);
 }
-.featured-courses .fc-ico{ color:#6b7280; display:inline-flex; }
-.featured-courses .fc-meta .label{ color:#334155; font-weight:700; }
-.featured-courses .fc-meta .value{ margin-left:auto; color:#0b132a; }
+.featured-courses .fc-ico {
+	color: #6b7280;
+	display: inline-flex;
+}
+.featured-courses .fc-meta .label {
+	color: #334155;
+	font-weight: 700;
+}
+.featured-courses .fc-meta .value {
+	margin-left: auto;
+	color: #0b132a;
+}
 
 /* Học phí */
-.featured-courses .fc-fee{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding-top:8px;
-  margin-top:6px;
-  border-top:1px dashed #e6e9ff;
+.featured-courses .fc-fee {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding-top: 8px;
+	margin-top: 6px;
+	border-top: 1px dashed #e6e9ff;
 }
-.featured-courses .fc-fee .label{ color:#334155;  }
-.featured-courses .fc-fee .price{ margin-left:auto; color:var(--fc-text);  }
+.featured-courses .fc-fee .label {
+	color: #334155;
+}
+.featured-courses .fc-fee .price {
+	margin-left: auto;
+	color: var(--fc-text);
+}
 
 /* CTA (đã scope theo section, không còn .btn global) */
-.featured-courses .btn{
-  appearance:none;border:none;cursor:pointer;
-font-size:13px;
-  padding:10px 14px;border-radius:10px;
+.featured-courses .btn {
+	appearance: none;
+	border: none;
+	cursor: pointer;
+	font-size: 13px;
+	padding: 10px 14px;
+	border-radius: 10px;
 }
-.featured-courses .btn-pill{ border-radius:999px; }
-.featured-courses .btn-dark{ background:#0a1556; color:#fff; }
-.featured-courses .btn-orange{ background:var(--fc-brand); color:#fff; }
-.featured-courses .btn:focus-visible{ outline:3px solid rgba(255,122,0,.35); outline-offset:2px; }
+.featured-courses .btn-pill {
+	border-radius: 999px;
+}
+.featured-courses .btn-dark {
+	background: #0a1556;
+	color: #fff;
+}
+.featured-courses .btn-orange {
+	background: var(--fc-brand);
+	color: #fff;
+}
+.featured-courses .btn:focus-visible {
+	outline: 3px solid rgba(255, 122, 0, 0.35);
+	outline-offset: 2px;
+}
 
-.featured-courses .fc-actions{
-  display:flex; gap:10px; margin-top:12px;
+.featured-courses .fc-actions {
+	display: flex;
+	gap: 10px;
+	margin-top: 12px;
 }
 
 /* Dots */
-.featured-courses .fc-dots{
-  display:flex; gap:8px; justify-content:center;
-  margin-top:18px;
+.featured-courses .fc-dots {
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+	margin-top: 18px;
 }
-.featured-courses .fc-dots span{
-  width:10px;height:10px;border-radius:50%;
-  background:#e5e7eb;
-  box-shadow:inset 0 0 0 2px rgba(10,21,86,.08);
+.featured-courses .fc-dots span {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #e5e7eb;
+	box-shadow: inset 0 0 0 2px rgba(10, 21, 86, 0.08);
 }
-.featured-courses .fc-dots span.active{ background:var(--fc-brand); }
+.featured-courses .fc-dots span.active {
+	background: var(--fc-brand);
+}
 
 /* Responsive */
-@media (max-width: 1024px){
-  .featured-courses .fc-grid{ grid-template-columns:repeat(2, minmax(260px,1fr)); }
-  .featured-courses::after{ top:48%; }
+@media (max-width: 1024px) {
+	.featured-courses .fc-grid {
+		grid-template-columns: repeat(2, minmax(260px, 1fr));
+	}
+	.featured-courses::after {
+		top: 48%;
+	}
 }
-@media (max-width: 640px){
-  .featured-courses .fc-grid{
-    grid-auto-flow:column;
-    grid-auto-columns:85%;
-    grid-template-columns:none;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    scroll-padding-left:16px;
-    padding-bottom:6px;
-  }
-  .featured-courses .fc-card{ scroll-snap-align:start; }
-  .featured-courses::after{ top:54%; }
+@media (max-width: 640px) {
+	.featured-courses .fc-grid {
+		grid-auto-flow: column;
+		grid-auto-columns: 85%;
+		grid-template-columns: none;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scroll-padding-left: 16px;
+		padding-bottom: 6px;
+	}
+	.featured-courses .fc-card {
+		scroll-snap-align: start;
+	}
+	.featured-courses::after {
+		top: 54%;
+	}
 }
 
 /* Tôn trọng reduce-motion để mượt hơn */
-@media (prefers-reduced-motion: reduce){
-  .featured-courses *{ transition:none !important; animation:none !important; }
+@media (prefers-reduced-motion: reduce) {
+	.featured-courses * {
+		transition: none !important;
+		animation: none !important;
+	}
 }
-.featured-courses .fc-slider{
-  position: relative;
-}
-
-.featured-courses .fc-track{
-  display:flex;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  -webkit-overflow-scrolling: touch;
-  /* ẩn scrollbar cho sạch */
-  scrollbar-width: none;
-}
-.featured-courses .fc-track::-webkit-scrollbar{ display:none; }
-
-.featured-courses .fc-slide{
-  flex:0 0 100%;                 /* mỗi trang = 100% chiều rộng container */
-  scroll-snap-align:start;
-  padding: 0 4px;                /* tí padding cho mũi tên không che card */
+.featured-courses .fc-slider {
+	position: relative;
 }
 
-.featured-courses .fc-slide-grid{
-  display:grid;
-  grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
-  gap:22px;
+.featured-courses .fc-track {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	/* ẩn scrollbar cho sạch */
+	scrollbar-width: none;
+}
+.featured-courses .fc-track::-webkit-scrollbar {
+	display: none;
+}
+
+.featured-courses .fc-slide {
+	flex: 0 0 100%; /* mỗi trang = 100% chiều rộng container */
+	scroll-snap-align: start;
+	padding: 0 4px; /* tí padding cho mũi tên không che card */
+}
+
+.featured-courses .fc-slide-grid {
+	display: grid;
+	grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+	gap: 22px;
 }
 
 /* Mũi tên */
-.featured-courses .fc-arrow{
-  position:absolute;
-  top:50%; transform:translateY(-50%);
-  z-index:3;
-  width:42px; height:42px; border-radius:999px;
-  border:none; cursor:pointer;
-  background:rgba(133, 133, 133, 0.95); color:#10146B;
-  font-size:24px; line-height:1;
-  box-shadow:var(--fc-shadow);
+.featured-courses .fc-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 3;
+	width: 42px;
+	height: 42px;
+	border-radius: 999px;
+	border: none;
+	cursor: pointer;
+	background: rgba(133, 133, 133, 0.95);
+	color: #10146b;
+	font-size: 24px;
+	line-height: 1;
+	box-shadow: var(--fc-shadow);
 }
-.featured-courses .fc-arrow--left{ left:-50px; }
-.featured-courses .fc-arrow--right{ right:-50px; }
-.featured-courses .fc-arrow[disabled]{ opacity:.35; cursor:default; }
+.featured-courses .fc-arrow--left {
+	left: -50px;
+}
+.featured-courses .fc-arrow--right {
+	right: -50px;
+}
+.featured-courses .fc-arrow[disabled] {
+	opacity: 0.35;
+	cursor: default;
+}
 
 /* Dots dùng button thay vì span để click được */
-.featured-courses .fc-dots{ display:flex; gap:8px; justify-content:center; margin-top:18px; }
-.featured-courses .fc-dot{
-  width:10px; height:10px; border-radius:50%;
-  background:#e5e7eb; border:none; cursor:pointer;
-  box-shadow:inset 0 0 0 2px rgba(10,21,86,.08);
+.featured-courses .fc-dots {
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+	margin-top: 18px;
 }
-.featured-courses .fc-dot.active{ background:var(--fc-brand); }
+.featured-courses .fc-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #e5e7eb;
+	border: none;
+	cursor: pointer;
+	box-shadow: inset 0 0 0 2px rgba(10, 21, 86, 0.08);
+}
+.featured-courses .fc-dot.active {
+	background: var(--fc-brand);
+}
 
 /* Responsive: tự tính số card mỗi trang bằng JS. Mũi tên gọn hơn trên mobile */
-@media (max-width: 640px){
-  .featured-courses .fc-arrow{ width:36px; height:36px; font-size:20px; }
+@media (max-width: 640px) {
+	.featured-courses .fc-arrow {
+		width: 36px;
+		height: 36px;
+		font-size: 20px;
+	}
 }
-@media (prefers-reduced-motion: reduce){
-  .featured-courses .fc-track{ scroll-behavior:auto; }
+@media (prefers-reduced-motion: reduce) {
+	.featured-courses .fc-track {
+		scroll-behavior: auto;
+	}
 }

@@ -1,148 +1,242 @@
-
-.login-card{
-  width:min(900px, 100%);
-  background:#fff;
-  border-radius:18px;
-  box-shadow:0 20px 60px rgba(0,0,0,.18);
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:24px;
-  padding:24px;
+.login-card {
+	width: min(900px, 100%);
+	background: #fff;
+	border-radius: 18px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 24px;
+	padding: 24px;
 }
 
 /* LEFT */
-.login-left{
-  position:relative;
-  background:#f7f8fd;
-  border-radius:14px;
-  padding:20px;
-  overflow:hidden;
+.login-left {
+	position: relative;
+	background: #f7f8fd;
+	border-radius: 14px;
+	padding: 20px;
+	overflow: hidden;
 }
 
-.login-slogan{
-  font-weight:700;
-  color:#10146B;
-  line-height:1.2;
-  margin:2px 0 14px;
-  font-size: clamp(18px, 2.2vw, 22px);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+.login-slogan {
+	font-weight: 700;
+	color: #10146b;
+	line-height: 1.2;
+	margin: 2px 0 14px;
+	font-size: clamp(18px, 2.2vw, 22px);
+	font-family:
+		system-ui,
+		-apple-system,
+		Segoe UI,
+		Roboto,
+		"Helvetica Neue",
+		Arial;
 }
-.login-slogan .hl{ color:#FF8A00; font-family: "Pacifico", cursive; font-weight:700; }
-.login-slogan .sub{ font-weight:700; }
+.login-slogan .hl {
+	color: #ff8a00;
+	font-family: "Pacifico", cursive;
+	font-weight: 700;
+}
+.login-slogan .sub {
+	font-weight: 700;
+}
 
-.login-collage{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:14px;
+.login-collage {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 14px;
 }
-.login-collage img{
-  width:100%; aspect-ratio:1/1; object-fit:cover;
-  border-radius:20px; background:#fff;
-  box-shadow:0 8px 20px rgba(16,20,107,.12);
+.login-collage img {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border-radius: 20px;
+	background: #fff;
+	box-shadow: 0 8px 20px rgba(16, 20, 107, 0.12);
 }
 
 /* các icon trang trí nhẹ nhàng */
-.decor{ position:absolute; width:34px; height:34px; border-radius:50%; opacity:.25; }
-.decor-1{ background:#FF8A00; right:22px; top:18px; }
-.decor-2{ background:#5BC0EB; left:16px; bottom:26px; }
-.decor-3{ background:#7E7CF4; right:56px; bottom:40px; }
+.decor {
+	position: absolute;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	opacity: 0.25;
+}
+.decor-1 {
+	background: #ff8a00;
+	right: 22px;
+	top: 18px;
+}
+.decor-2 {
+	background: #5bc0eb;
+	left: 16px;
+	bottom: 26px;
+}
+.decor-3 {
+	background: #7e7cf4;
+	right: 56px;
+	bottom: 40px;
+}
 
 /* RIGHT */
-.login-right{
-  background:#fff;
-  border-radius:14px;
-  padding:14px 18px 8px;
-  display:flex; flex-direction:column;
+.login-right {
+	background: #fff;
+	border-radius: 14px;
+	padding: 14px 18px 8px;
+	display: flex;
+	flex-direction: column;
 }
 
-.login-right h3{
-  margin:6px 4px 12px;
-  font-size:18px; font-weight:800; color:#0E1B50;
+.login-right h3 {
+	margin: 6px 4px 12px;
+	font-size: 18px;
+	font-weight: 800;
+	color: #0e1b50;
 }
 
-.google-btn{
-  display:flex; align-items:center; justify-content:center; gap:10px;
-  width:100%;
-  background:#F3F5FA;
-  border:1px solid #E6E9F5;
-  border-radius:12px;
-  padding:12px;
-  font-weight:600; color:#0E1B50;
-  box-shadow:0 6px 14px rgba(0,0,0,.05) inset;
+.google-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+	background: #f3f5fa;
+	border: 1px solid #e6e9f5;
+	border-radius: 12px;
+	padding: 12px;
+	font-weight: 600;
+	color: #0e1b50;
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05) inset;
 }
-.google-btn img{ width:18px; height:18px; }
-.google-btn:hover{ filter:brightness(.98); }
+.google-btn img {
+	width: 18px;
+	height: 18px;
+}
+.google-btn:hover {
+	filter: brightness(0.98);
+}
 
-.divider{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin:12px 0;
-  /* nếu nền thẻ là trắng, giữ nguyên; nếu khác, đổi biến này */
-  background-color: var(--card-bg, #fff);
-  color:#7a7f8a;
-  font-size:13px;
+.divider {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 12px 0;
+	/* nếu nền thẻ là trắng, giữ nguyên; nếu khác, đổi biến này */
+	background-color: var(--card-bg, #fff);
+	color: #7a7f8a;
+	font-size: 13px;
 }
 
 .divider::before,
-.divider::after{
-  content:"";
-  flex:1;                  /* kéo giãn thành đường kẻ hai bên */
-  height:1px;
-  background:#E6E9F5;
-  box-shadow:0 1px 0 #d6dbe8 inset; /* mảnh như ảnh mẫu */
+.divider::after {
+	content: "";
+	flex: 1; /* kéo giãn thành đường kẻ hai bên */
+	height: 1px;
+	background: #e6e9f5;
+	box-shadow: 0 1px 0 #d6dbe8 inset; /* mảnh như ảnh mẫu */
 }
 
-.divider span{
-  white-space:nowrap;
-  padding:0 8px;
-  background-color: var(--card-bg, #fff); /* che phần line phía dưới */
-  position:relative;
-  top:0; /* tránh lệch baseline */
+.divider span {
+	white-space: nowrap;
+	padding: 0 8px;
+	background-color: var(--card-bg, #fff); /* che phần line phía dưới */
+	position: relative;
+	top: 0; /* tránh lệch baseline */
 }
 
 /* form */
-.login-form{
-    font-family: 'Montserrat', sans-serif;display:flex; flex-direction:column; gap:12px; margin-top:6px; }
+.login-form {
+	font-family: "Montserrat", sans-serif;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 6px;
+}
 
-.input-group{
-  position:relative; display:flex; align-items:center;
-  border:1px solid #E6E9F5; border-radius:12px; padding:10px 12px;
-  background:#fff;
-  box-shadow:0 2px 0 rgba(16,20,107,.04) inset;
+.input-group {
+	position: relative;
+	display: flex;
+	align-items: center;
+	border: 1px solid #e6e9f5;
+	border-radius: 12px;
+	padding: 10px 12px;
+	background: #fff;
+	box-shadow: 0 2px 0 rgba(16, 20, 107, 0.04) inset;
 }
-.input-group:focus-within{
-  border-color:#C8D0F8; box-shadow:0 0 0 3px rgba(16,20,107,.10);
+.input-group:focus-within {
+	border-color: #c8d0f8;
+	box-shadow: 0 0 0 3px rgba(16, 20, 107, 0.1);
 }
-.input-group input{
-  width:100%; border:0; outline:none; font-size:14px; background:transparent;
+.input-group input {
+	width: 100%;
+	border: 0;
+	outline: none;
+	font-size: 14px;
+	background: transparent;
 }
-.input-icon{ width:16px; height:16px; margin-right:8px; opacity:.7; }
-.toggle-eye{ width:18px; height:18px; cursor:pointer; opacity:.75; }
+.input-icon {
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+	opacity: 0.7;
+}
+.toggle-eye {
+	width: 18px;
+	height: 18px;
+	cursor: pointer;
+	opacity: 0.75;
+}
 
-.agree{
-  font-size:13px; color:#606575; display:flex; align-items:center; gap:8px;
+.agree {
+	font-size: 13px;
+	color: #606575;
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
-.agree a{ color:#10146B; text-decoration:underline; }
+.agree a {
+	color: #10146b;
+	text-decoration: underline;
+}
 
-.submit-btn{
-    font-family: 'Montserrat', sans-serif;
-  background:#10146B; color:#fff; border:0; border-radius:12px;
-  padding:12px 14px; font-weight:800; cursor:pointer;
-  box-shadow:0 12px 30px rgba(16,20,107,.25);
+.submit-btn {
+	font-family: "Montserrat", sans-serif;
+	background: #10146b;
+	color: #fff;
+	border: 0;
+	border-radius: 12px;
+	padding: 12px 14px;
+	font-weight: 800;
+	cursor: pointer;
+	box-shadow: 0 12px 30px rgba(16, 20, 107, 0.25);
 }
-.submit-btn:hover{ filter:brightness(.97); }
+.submit-btn:hover {
+	filter: brightness(0.97);
+}
 
-.muted{
-  text-align:center; color:#7a7f8a; font-size:13px; margin-top:8px;
+.muted {
+	text-align: center;
+	color: #7a7f8a;
+	font-size: 13px;
+	margin-top: 8px;
 }
-.muted a{ color:#10146B; font-weight:600; }
+.muted a {
+	color: #10146b;
+	font-weight: 600;
+}
 
 /* Responsive */
-@media (max-width: 980px){
-  .login-card{ grid-template-columns: 1fr; }
+@media (max-width: 980px) {
+	.login-card {
+		grid-template-columns: 1fr;
+	}
 }
-@media (max-width: 560px){
-  .login-card{ padding:16px; }
-  .login-left{ padding:16px; }
+@media (max-width: 560px) {
+	.login-card {
+		padding: 16px;
+	}
+	.login-left {
+		padding: 16px;
+	}
 }
