@@ -1,3 +1,4 @@
+import { Rating } from "@mui/material";
 import "../style/featured.css";
 import { useEffect, useMemo, useRef, useState } from "react";
 
@@ -139,15 +140,13 @@ export default function FeaturedCourses() {
                                                                                                                 }
                                                                                                         </h3>
                                                                                                 </div>
-                                                                                                <div
-                                                                                                        aria-label={`${item.stars} trên 5`}
-                                                                                                        className="fc-rating"
-                                                                                                >
-                                                                                                        {"★★★★★".slice(
-                                                                                                                0,
+
+                                                                                                <Rating
+                                                                                                        readOnly
+                                                                                                        value={
                                                                                                                 item.stars
-                                                                                                        )}
-                                                                                                </div>
+                                                                                                        }
+                                                                                                />
                                                                                         </header>
 
                                                                                         <p className="fc-desc">

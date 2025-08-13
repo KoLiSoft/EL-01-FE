@@ -193,7 +193,7 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
 
                                                 <div className="muted">
                                                         <a
-                                                                href="#"
+                                                                href="/forgot-password"
                                                                 onClick={(e) => {
                                                                         e.preventDefault();
                                                                         if (onForgotPassword) onForgotPassword();
@@ -206,7 +206,7 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                                                 <div className="muted">
                                                         Bạn chưa có tài khoản?{" "}
                                                         <a
-                                                                href="#"
+                                                                href="register"
                                                                 onClick={(e) => {
                                                                         e.preventDefault();
                                                                         if (onRegisterClick) onRegisterClick();

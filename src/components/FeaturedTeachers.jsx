@@ -41,11 +41,12 @@ export default function FeaturedTeachers({ items = [] }) {
                         </h2>
 
                         <div className="ft-carousel">
-                                <button className="ft-nav ft-prev" onClick={() => go(page - 1)} aria-label="Trước">
+                                <button aria-label="Trước" className="ft-nav ft-prev" onClick={() => go(page - 1)}>
                                         ‹
                                 </button>
 
-                                <div className="ft-viewport" aria-roledescription="carousel">
+                                {/* <div aria-roledescription="carousel" className="ft-viewport"> */}
+                                <div className="ft-viewport">
                                         <div className="ft-track" style={{ transform: `translateX(-${page * 100}%)` }}>
                                                 {slides.map((group, idx) => (
                                                         <div className="ft-slide" key={idx}>
@@ -62,7 +63,7 @@ export default function FeaturedTeachers({ items = [] }) {
                                         </div>
                                 </div>
 
-                                <button className="ft-nav ft-next" onClick={() => go(page + 1)} aria-label="Sau">
+                                <button aria-label="Sau" className="ft-nav ft-next" onClick={() => go(page + 1)}>
                                         ›
                                 </button>
                         </div>
@@ -70,10 +71,10 @@ export default function FeaturedTeachers({ items = [] }) {
                         <div className="ft-dots">
                                 {slides.map((_, i) => (
                                         <button
-                                                key={i}
-                                                className={`ft-dot ${i === page ? "is-active" : ""}`}
-                                                onClick={() => go(i)}
                                                 aria-label={`Tới trang ${i + 1}`}
+                                                className={`ft-dot ${i === page ? "is-active" : ""}`}
+                                                key={i}
+                                                onClick={() => go(i)}
                                         />
                                 ))}
                         </div>

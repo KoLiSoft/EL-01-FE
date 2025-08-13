@@ -163,7 +163,7 @@ export default function Registerstd({ onLoginClick }) {
                 };
                 document.body.appendChild(s);
                 return () => document.body.removeChild(s);
-        }, []);
+        }, [onLoginClick]);
 
         const handleGoogleLogin = () => {
                 if (codeClientRef.current && !isGoogleLoading) {

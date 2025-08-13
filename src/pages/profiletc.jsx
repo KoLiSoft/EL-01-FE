@@ -9,16 +9,16 @@ export default function ProfileTc() {
                                         <img alt="avatar" src="https://i.pravatar.cc/100?img=65" />
                                 </div>
                                 <nav className="prtc__sidebar-nav">
-                                        <a className="prtc__nav-item prtc__nav-item--active" href="#">
+                                        <a className="prtc__nav-item prtc__nav-item--active" href="/profiletc/info">
                                                 Thông tin cá nhân
                                         </a>
-                                        <a className="prtc__nav-item" href="#">
+                                        <a className="prtc__nav-item" href="/profiletc/documents">
                                                 Tài liệu
                                         </a>
-                                        <a className="prtc__nav-item" href="#">
+                                        <a className="prtc__nav-item" href="/profiletc/settings">
                                                 Cài đặt
                                         </a>
-                                        <a className="prtc__nav-item" href="#">
+                                        <a className="prtc__nav-item" href="/profiletc/wallet">
                                                 Ví
                                         </a>
                                 </nav>
