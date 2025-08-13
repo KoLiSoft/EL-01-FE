@@ -1,4 +1,4 @@
-import { EnvelopeIcon, EyeIcon, EyeSlashIcon, PasswordIcon } from "@phosphor-icons/react/dist/ssr";
+import { EnvelopeIcon, EyeIcon, EyeSlashIcon, LockIcon } from "@phosphor-icons/react/dist/ssr";
 import { useEffect, useRef, useState } from "react";
 import googleIcon from "../assets/img/gg.svg";
 import { login } from "../hooks/auth.hooks.js";
@@ -159,7 +159,7 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                                                 </label>
 
                                                 <label className="input-group">
-                                                        <PasswordIcon alt="" className="input-icon" />
+                                                        <LockIcon alt="" className="input-icon" />
                                                         <input
                                                                 disabled={isLoading}
                                                                 name="password"
@@ -173,6 +173,7 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                                                                         alt="toggle"
                                                                         className="toggle-eye"
                                                                         onClick={() => setShowPassword((v) => !v)}
+                                                                        size={20}
                                                                         style={{ cursor: "pointer" }}
                                                                 />
                                                         ) : (
@@ -180,6 +181,7 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                                                                         alt="toggle"
                                                                         className="toggle-eye"
                                                                         onClick={() => setShowPassword((v) => !v)}
+                                                                        size={20}
                                                                         style={{ cursor: "pointer" }}
                                                                 />
                                                         )}
