@@ -9,7 +9,7 @@ export default function Filter() {
                                 <input
                                         className="search-input"
                                         placeholder="Tìm kiếm"
-                                        style={{ width: 140, height: 28 }}
+                                        style={{ height: 28, width: 140 }}
                                 />
                         </div>
 
@@ -19,7 +19,7 @@ export default function Filter() {
                                 <div className="check-list">
                                         {["Phổ thông", "Ngoại ngữ", "Âm nhạc", "Luyện thi Đại học"].map((x) => (
                                                 <label className="check" key={x}>
-                                                        <input type="checkbox" defaultChecked={x === "Phổ thông"} /> {x}
+                                                        <input defaultChecked={x === "Phổ thông"} type="checkbox" /> {x}
                                                 </label>
                                         ))}
                                 </div>
@@ -43,8 +43,8 @@ export default function Filter() {
                                         ].map((x) => (
                                                 <label className="check" key={x}>
                                                         <input
-                                                                type="checkbox"
                                                                 defaultChecked={["Toán", "Lý", "Văn"].includes(x)}
+                                                                type="checkbox"
                                                         />{" "}
                                                         {x}
                                                 </label>
@@ -71,18 +71,18 @@ export default function Filter() {
                                         {["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ Nhật"].map((x) => (
                                                 <label className="check" key={x}>
                                                         <input
-                                                                type="checkbox"
                                                                 defaultChecked={["Thứ 2", "Thứ 3"].includes(x)}
+                                                                type="checkbox"
                                                         />{" "}
                                                         {x}
                                                 </label>
                                         ))}
                                 </div>
                                 <div className="range" style={{ borderTop: "1px dashed var(--line)" }}>
-                                        <div style={{ fontSize: 13, color: "var(--muted)" }}>Thời gian</div>
-                                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-                                                <input type="time" defaultValue="17:00" />
-                                                <input type="time" defaultValue="20:15" />
+                                        <div style={{ color: "var(--muted)", fontSize: 13 }}>Thời gian</div>
+                                        <div style={{ display: "grid", gap: 8, gridTemplateColumns: "1fr 1fr" }}>
+                                                <input defaultValue="17:00" type="time" />
+                                                <input defaultValue="20:15" type="time" />
                                         </div>
                                 </div>
                         </section>
@@ -95,8 +95,8 @@ export default function Filter() {
                                                 (x) => (
                                                         <label className="check" key={x}>
                                                                 <input
-                                                                        type="checkbox"
                                                                         defaultChecked={x === "TH Phổ thông"}
+                                                                        type="checkbox"
                                                                 />{" "}
                                                                 {x}
                                                         </label>
@@ -125,7 +125,7 @@ export default function Filter() {
                                                 "Giảng viên trung học",
                                         ].map((x, i) => (
                                                 <label className="check" key={x}>
-                                                        <input type="checkbox" disabled={i > 6} /> {x}
+                                                        <input disabled={i > 6} type="checkbox" /> {x}
                                                 </label>
                                         ))}
                                 </div>
@@ -137,14 +137,14 @@ export default function Filter() {
                                         <div
                                                 style={{
                                                         display: "flex",
-                                                        justifyContent: "space-between",
                                                         fontSize: 13,
+                                                        justifyContent: "space-between",
                                                 }}
                                         >
                                                 <span>Độ tuổi:</span>
                                                 <b>18-78t</b>
                                         </div>
-                                        <input type="range" min={18} max={78} defaultValue={18} />
+                                        <input defaultValue={18} max={78} min={18} type="range" />
                                 </div>
                         </section>
 
@@ -153,10 +153,10 @@ export default function Filter() {
                                 <div className="range">
                                         <div style={{ fontSize: 13 }}>Giới tính</div>
                                         <label className="check">
-                                                <input type="radio" name="gender" defaultChecked /> Nữ
+                                                <input defaultChecked name="gender" type="radio" /> Nữ
                                         </label>
                                         <label className="check">
-                                                <input type="radio" name="gender" /> Nam
+                                                <input name="gender" type="radio" /> Nam
                                         </label>
                                 </div>
                         </section>
@@ -166,16 +166,16 @@ export default function Filter() {
                                 <div className="range">
                                         <div
                                                 style={{
-                                                        display: "flex",
-                                                        justifyContent: "space-between",
-                                                        fontSize: 13,
                                                         alignItems: "center",
+                                                        display: "flex",
+                                                        fontSize: 13,
+                                                        justifyContent: "space-between",
                                                 }}
                                         >
                                                 <span>Học phí/giờ:</span>
                                                 <span className="muted">80.000 - 800.000đ</span>
                                         </div>
-                                        <input type="range" min={80000} max={800000} defaultValue={100000} />
+                                        <input defaultValue={100000} max={800000} min={80000} type="range" />
                                 </div>
                         </section>
 

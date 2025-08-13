@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import EmailIcon from "../assets/img/email.svg";
-import LockIcon from "../assets/img/lock.svg";
 import EyeIcon from "../assets/img/eye.svg";
 import EyeOffIcon from "../assets/img/eye-off.svg";
+import LockIcon from "../assets/img/lock.svg";
 import "../style/forgot.css";
 
 export default function ForgotPassword() {
@@ -42,7 +42,7 @@ export default function ForgotPassword() {
                                                         <span className="highlight-orange">Dẫn</span> lối tương lai
                                                 </span>
                                         </p>
-                                        <img src="/img/Group 1.png" alt="Học sinh" />
+                                        <img alt="Học sinh" src="/img/Group 1.png" />
                                 </div>
 
                                 {/* RIGHT */}
@@ -52,82 +52,82 @@ export default function ForgotPassword() {
                                         <form className="login-form" onSubmit={submit}>
                                                 {/* Phone/Email */}
                                                 <label className="input-group">
-                                                        <img className="input-icon" src={EmailIcon} alt="" />
-                                                        <input type="text" placeholder="Số điện thoại/Gmail" required />
+                                                        <img alt="" className="input-icon" src={EmailIcon} />
+                                                        <input placeholder="Số điện thoại/Gmail" required type="text" />
                                                 </label>
 
                                                 {/* New password */}
                                                 <label className="input-group">
-                                                        <img className="input-icon" src={LockIcon} alt="" />
+                                                        <img alt="" className="input-icon" src={LockIcon} />
                                                         <input
-                                                                type={showPass ? "text" : "password"}
                                                                 placeholder="Mật khẩu"
                                                                 required
+                                                                type={showPass ? "text" : "password"}
                                                         />
                                                         <img
-                                                                className="toggle-eye"
-                                                                src={showPass ? EyeOffIcon : EyeIcon}
                                                                 alt="toggle"
+                                                                className="toggle-eye"
                                                                 onClick={() => setShowPass((v) => !v)}
+                                                                src={showPass ? EyeOffIcon : EyeIcon}
                                                         />
                                                 </label>
 
                                                 {/* Confirm */}
                                                 <label className="input-group">
-                                                        <img className="input-icon" src={LockIcon} alt="" />
+                                                        <img alt="" className="input-icon" src={LockIcon} />
                                                         <input
-                                                                type={showConfirm ? "text" : "password"}
                                                                 placeholder="Xác nhận mật khẩu"
                                                                 required
+                                                                type={showConfirm ? "text" : "password"}
                                                         />
                                                         <img
-                                                                className="toggle-eye"
-                                                                src={showConfirm ? EyeOffIcon : EyeIcon}
                                                                 alt="toggle"
+                                                                className="toggle-eye"
                                                                 onClick={() => setShowConfirm((v) => !v)}
+                                                                src={showConfirm ? EyeOffIcon : EyeIcon}
                                                         />
                                                 </label>
 
                                                 {/* OTP row */}
                                                 <div className="otp-row">
                                                         <label className="input-group">
-                                                                <img className="input-icon" src={LockIcon} alt="" />
+                                                                <img alt="" className="input-icon" src={LockIcon} />
                                                                 <input
-                                                                        type="text"
                                                                         inputMode="numeric"
-                                                                        placeholder="Nhập mã OTP"
-                                                                        value={otp}
                                                                         onChange={(e) => setOtp(e.target.value)}
+                                                                        placeholder="Nhập mã OTP"
                                                                         required
+                                                                        type="text"
+                                                                        value={otp}
                                                                 />
                                                         </label>
 
                                                         <div className="otp-controls">
                                                                 <label className="radio">
                                                                         <input
-                                                                                type="radio"
-                                                                                name="method"
-                                                                                value="gmail"
                                                                                 checked={method === "gmail"}
+                                                                                name="method"
                                                                                 onChange={() => setMethod("gmail")}
+                                                                                type="radio"
+                                                                                value="gmail"
                                                                         />{" "}
                                                                         Gmail
                                                                 </label>
                                                                 <label className="radio">
                                                                         <input
-                                                                                type="radio"
-                                                                                name="method"
-                                                                                value="sms"
                                                                                 checked={method === "sms"}
+                                                                                name="method"
                                                                                 onChange={() => setMethod("sms")}
+                                                                                type="radio"
+                                                                                value="sms"
                                                                         />{" "}
                                                                         SMS
                                                                 </label>
 
                                                                 <button
                                                                         className="otp-btn"
-                                                                        onClick={sendOTP}
                                                                         disabled={timer > 0}
+                                                                        onClick={sendOTP}
                                                                         type="button"
                                                                 >
                                                                         {timer > 0 ? `Gửi lại (${timer}s)` : "GỬI OTP"}
@@ -135,7 +135,7 @@ export default function ForgotPassword() {
                                                         </div>
                                                 </div>
 
-                                                <button type="submit" className="submit-btn">
+                                                <button className="submit-btn" type="submit">
                                                         Xác nhận thay đổi mật khẩu
                                                 </button>
                                         </form>

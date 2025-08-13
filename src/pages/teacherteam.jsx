@@ -1,15 +1,15 @@
 import "../style/teacherteam.css";
-import teacherImage from "../assets/img/img4.png";
+import { useState } from "react";
 import img1 from "../assets/img/1.svg";
 import img2 from "../assets/img/2.svg";
 import img3 from "../assets/img/3.svg";
 import img4 from "../assets/img/4.svg";
 import img5 from "../assets/img/5.svg";
 import img6 from "../assets/img/6.svg";
+import teacherImage from "../assets/img/img4.png";
 import supportImage from "../assets/img/img7.png";
 import ContactHero from "../components/ContactHero";
 import RegisterStd from "./register-std";
-import { useState } from "react";
 
 export default function TeacherTeam() {
         const [showRegisterModal, setShowRegisterModal] = useState(false);
@@ -41,7 +41,7 @@ export default function TeacherTeam() {
 
                                 {/* Bên phải: ảnh */}
                                 <div className="teacher-image-wrapper">
-                                        <img src={teacherImage} alt="Teacher team" className="teacher-image" />
+                                        <img alt="Teacher team" className="teacher-image" src={teacherImage} />
                                 </div>
                         </div>
                         <section className="reasons">
@@ -55,18 +55,18 @@ export default function TeacherTeam() {
                                         <div className="reasons-col">
                                                 <Reason
                                                         number="1"
-                                                        title="Lộ trình học rõ ràng, đúng năng lực"
                                                         text="Mỗi học viên được xây dựng kế hoạch học tập riêng, bám sát trình độ hiện tại và mục tiêu cá nhân."
+                                                        title="Lộ trình học rõ ràng, đúng năng lực"
                                                 />
                                                 <Reason
                                                         number="2"
-                                                        title="Giờ học linh hoạt – phù hợp lịch cá nhân"
                                                         text="Dễ dàng chọn thời gian học phù hợp, kể cả buổi tối hoặc cuối tuần; vẫn duy trì đều đặn."
+                                                        title="Giờ học linh hoạt – phù hợp lịch cá nhân"
                                                 />
                                                 <Reason
                                                         number="3"
-                                                        title="Tập trung tối đa, học mà không bị nhiễu"
                                                         text="Lớp học riêng cùng giáo viên giúp học viên tránh xao nhãng, tăng hiệu quả ngay trong buổi học."
+                                                        title="Tập trung tối đa, học mà không bị nhiễu"
                                                 />
                                         </div>
 
@@ -74,13 +74,13 @@ export default function TeacherTeam() {
                                         <div className="reasons-col">
                                                 <Reason
                                                         number="4"
-                                                        title="Theo dõi tiến độ – đồng hành sát sao"
                                                         text="Phụ huynh được cập nhật định kỳ tiến trình học, kết quả kiểm tra và mốc tiến bộ theo từng giai đoạn."
+                                                        title="Theo dõi tiến độ – đồng hành sát sao"
                                                 />
                                                 <Reason
                                                         number="5"
-                                                        title="Cam kết chất lượng – đồng hành đến kết quả"
                                                         text="EdulinkTutor không chỉ dạy, mà theo sát đến khi học viên đạt được kết quả mong muốn."
+                                                        title="Cam kết chất lượng – đồng hành đến kết quả"
                                                 />
                                         </div>
                                 </div>
@@ -102,7 +102,7 @@ export default function TeacherTeam() {
                                 <div className="process-grid">
                                         <div className="process-card">
                                                 <div className="process-icon">
-                                                        <img src={img1} alt="" />
+                                                        <img alt="" src={img1} />
                                                 </div>
                                                 <div className="process-content">
                                                         <h4>
@@ -117,7 +117,7 @@ export default function TeacherTeam() {
                                         </div>
                                         <div className="process-card">
                                                 <div className="process-icon">
-                                                        <img src={img2} alt="" />
+                                                        <img alt="" src={img2} />
                                                 </div>
                                                 <div className="process-content">
                                                         <h4>
@@ -132,7 +132,7 @@ export default function TeacherTeam() {
                                         </div>
                                         <div className="process-card">
                                                 <div className="process-icon">
-                                                        <img src={img3} alt="" />
+                                                        <img alt="" src={img3} />
                                                 </div>
                                                 <div className="process-content">
                                                         <h4>
@@ -147,7 +147,7 @@ export default function TeacherTeam() {
                                         </div>
                                         <div className="process-card">
                                                 <div className="process-icon">
-                                                        <img src={img4} alt="" />
+                                                        <img alt="" src={img4} />
                                                 </div>
                                                 <div className="process-content">
                                                         <h4>
@@ -162,7 +162,7 @@ export default function TeacherTeam() {
                                         </div>
                                         <div className="process-card">
                                                 <div className="process-icon">
-                                                        <img src={img5} alt="" />
+                                                        <img alt="" src={img5} />
                                                 </div>
                                                 <div className="process-content">
                                                         <h4>
@@ -176,7 +176,7 @@ export default function TeacherTeam() {
                                         </div>
                                         <div className="process-card">
                                                 <div className="process-icon">
-                                                        <img src={img6} alt="" />
+                                                        <img alt="" src={img6} />
                                                 </div>
                                                 <div className="process-content">
                                                         <h4>
@@ -214,7 +214,7 @@ export default function TeacherTeam() {
                         <section className="help-section">
                                 <div className="help-inner">
                                         <div>
-                                                <img src={supportImage} alt="Support" className="help-image" />
+                                                <img alt="Support" className="help-image" src={supportImage} />
                                         </div>
                                         <div className="help-content">
                                                 <h3 className="help-title">Bạn đang cần hỗ trợ?</h3>

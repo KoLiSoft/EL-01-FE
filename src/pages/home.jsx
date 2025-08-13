@@ -1,14 +1,14 @@
 import "../style/home.css";
-import studentImg from "../assets/img/Group 44.png";
 import { useState } from "react";
-import USPSection from "../components/USPSection";
+import studentImg from "../assets/img/Group 44.png";
 import ContactHero from "../components/ContactHero";
+import USPSection from "../components/USPSection";
 import "../style/teacher-card.css";
+import avt1 from "../assets/img/avt1.png";
 import teacher1 from "../assets/img/teacher1.png";
 import teacher2 from "../assets/img/teacher2.png";
 import FeaturedTeachers from "../components/FeaturedTeachers";
 import Testimonials from "../components/Testimonials";
-import avt1 from "../assets/img/avt1.png";
 
 export default function Home() {
         const [openIndex, setOpenIndex] = useState(null);
@@ -19,24 +19,24 @@ export default function Home() {
 
         const questions = [
                 {
-                        question: "Bạn đang gặp khó khăn trong việc học trên lớp?",
                         answer: "Giáo viên của chúng tôi sẽ đồng hành cùng bạn từ kiến thức nền tảng đến nâng cao.",
+                        question: "Bạn đang gặp khó khăn trong việc học trên lớp?",
                 },
                 {
-                        question: "Bạn muốn bứt phá điểm số trong thời gian ngắn?",
                         answer: "Lộ trình cá nhân hoá – ôn tập chiến lược – bám sát đề thi.",
+                        question: "Bạn muốn bứt phá điểm số trong thời gian ngắn?",
                 },
                 {
-                        question: "Bạn cần chuẩn bị cho kỳ thi quan trọng (thi 10, thi ĐH)?",
                         answer: "Giáo viên giỏi, luyện thi, cam kết kết quả rõ ràng.",
+                        question: "Bạn cần chuẩn bị cho kỳ thi quan trọng (thi 10, thi ĐH)?",
                 },
                 {
-                        question: "Bạn có đam mê nhưng thiếu định hướng trong học tập?",
                         answer: "Đội ngũ tư vấn học tập sẽ giúp bạn xây lộ trình phù hợp với mục tiêu của bạn.",
+                        question: "Bạn có đam mê nhưng thiếu định hướng trong học tập?",
                 },
                 {
-                        question: "Bạn từng mất gốc – học lại nhiều lần không hiệu quả?",
                         answer: "Phương pháp dạy dễ hiểu, từ từ xây nền vững chắc, lấy lại sự tự tin.",
+                        question: "Bạn từng mất gốc – học lại nhiều lần không hiệu quả?",
                 },
         ];
         return (
@@ -64,7 +64,7 @@ export default function Home() {
                                 </div>
 
                                 <div className="hero-right">
-                                        <img src="/img/Group 1.png" alt="Học sinh" />
+                                        <img alt="Học sinh" src="/img/Group 1.png" />
                                 </div>
                         </section>
                         <section className="stats-section">
@@ -87,7 +87,7 @@ export default function Home() {
                         </section>
                         <section className="study-support-section">
                                 <div className="support-left">
-                                        <img src={studentImg} alt="Student" className="support-img" />
+                                        <img alt="Student" className="support-img" src={studentImg} />
                                 </div>
 
                                 <div className="support-right">
@@ -102,9 +102,9 @@ export default function Home() {
                                         <ul className="support-list">
                                                 {questions.map((item, index) => (
                                                         <li
+                                                                className={openIndex === index ? "active" : ""}
                                                                 key={index}
                                                                 onClick={() => toggleAnswer(index)}
-                                                                className={openIndex === index ? "active" : ""}
                                                         >
                                                                 <span className="number-circle">{index + 1}</span>
                                                                 <strong>{item.question}</strong>
@@ -122,56 +122,56 @@ export default function Home() {
                                 <FeaturedTeachers
                                         items={[
                                                 {
-                                                        name: "Nguyễn Thị Hương",
                                                         avatar: teacher2,
-                                                        gender: "Nữ",
-                                                        district: "Quận 7",
                                                         city: "TPHCM",
+                                                        district: "Quận 7",
+                                                        gender: "Nữ",
+                                                        name: "Nguyễn Thị Hương",
                                                         subject: "CNTT",
                                                         tags: ["C#", "Java", "Figma", "+2"],
                                                 },
                                                 {
-                                                        name: "Hà Thanh Hùng",
                                                         avatar: teacher1,
-                                                        gender: "Nam",
-                                                        district: "Quận 1",
                                                         city: "TPHCM",
+                                                        district: "Quận 1",
+                                                        gender: "Nam",
+                                                        name: "Hà Thanh Hùng",
                                                         subject: "Ngữ pháp / Ngữ âm",
                                                         tags: ["IELTS", "TOEIC", "+3"],
                                                 },
                                                 {
-                                                        name: "Lê Anh Thư",
                                                         avatar: teacher2,
-                                                        gender: "Nữ",
-                                                        district: "Quận 9",
                                                         city: "TPHCM",
+                                                        district: "Quận 9",
+                                                        gender: "Nữ",
+                                                        name: "Lê Anh Thư",
                                                         subject: "Luyện thi Đại học",
                                                         tags: ["Toán", "Hóa", "Sinh", "+1"],
                                                 },
                                                 {
-                                                        name: "Trần Minh Khoa",
                                                         avatar: teacher1,
-                                                        gender: "Nam",
-                                                        district: "Quận 5",
                                                         city: "TPHCM",
+                                                        district: "Quận 5",
+                                                        gender: "Nam",
+                                                        name: "Trần Minh Khoa",
                                                         subject: "Vật lý",
                                                         tags: ["12", "Ôn HSG", "+1"],
                                                 },
                                                 {
-                                                        name: "Phạm Hải Yến",
                                                         avatar: teacher2,
-                                                        gender: "Nữ",
-                                                        district: "Quận 3",
                                                         city: "TPHCM",
+                                                        district: "Quận 3",
+                                                        gender: "Nữ",
+                                                        name: "Phạm Hải Yến",
                                                         subject: "Tiếng Anh",
                                                         tags: ["IELTS", "Giao tiếp", "+2"],
                                                 },
                                                 {
-                                                        name: "Trần Minh Đăng",
                                                         avatar: teacher1,
-                                                        gender: "Nam",
-                                                        district: "Quận 5",
                                                         city: "TPHCM",
+                                                        district: "Quận 5",
+                                                        gender: "Nam",
+                                                        name: "Trần Minh Đăng",
                                                         subject: "Vật lý",
                                                         tags: ["12", "Ôn HSG", "+1"],
                                                 },

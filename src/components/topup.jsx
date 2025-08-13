@@ -20,11 +20,11 @@ function CopyInput({ label, value = "", editable = false }) {
                         <span>{label}</span>
                         <div className="topup__copywrap">
                                 <input
-                                        value={val}
                                         onChange={(e) => (editable ? setVal(e.target.value) : null)}
                                         readOnly={!editable}
+                                        value={val}
                                 />
-                                <button type="button" className="topup__copybtn" onClick={doCopy}>
+                                <button className="topup__copybtn" onClick={doCopy} type="button">
                                         {copied ? "Đã copy" : "Copy"}
                                 </button>
                         </div>
@@ -32,9 +32,9 @@ function CopyInput({ label, value = "", editable = false }) {
         );
 }
 const BANK_INFO = {
-        bank: "ACB - Ngân hàng TMCP Á Châu",
         account: "79797979",
         accountMasked: "797***979",
+        bank: "ACB - Ngân hàng TMCP Á Châu",
         holder: "EDULINKTUTOR",
 };
 const userId = "123456789",
@@ -52,7 +52,7 @@ function HelpDrop({ items = [], onClose }) {
         }, [onClose]);
 
         return (
-                <div ref={ref} className="helpdrop" role="dialog" aria-label="Trợ giúp nạp tiền">
+                <div aria-label="Trợ giúp nạp tiền" className="helpdrop" ref={ref} role="dialog">
                         <div className="helpdrop__head">
                                 <span>Trợ giúp chưa nhận được tiền nạp về</span>
                                 <button className="helpdrop__close" onClick={onClose}>
@@ -62,7 +62,7 @@ function HelpDrop({ items = [], onClose }) {
 
                         <ul className="helpdrop__list">
                                 {items.map((it, i) => (
-                                        <li key={i} className="helpdrop__item">
+                                        <li className="helpdrop__item" key={i}>
                                                 <div className="helpdrop__badge">
                                                         <div className="helpdrop__badge-top">Mã</div>
                                                         <div className="helpdrop__badge-code">{it.code}</div>
@@ -92,9 +92,9 @@ function HelpDrop({ items = [], onClose }) {
 export default function TopUp({ qrImage, bankInfo }) {
         const [openHelp, setOpenHelp] = React.useState(false);
         const helpItems = [
-                { code: "RT5", attempt: 6, date: "13/10/2024", status: "pending" },
-                { code: "RT4", attempt: 6, date: "11/10/2024", status: "rejected" },
-                { code: "RT3", attempt: 6, date: "12/10/2024", status: "success" },
+                { attempt: 6, code: "RT5", date: "13/10/2024", status: "pending" },
+                { attempt: 6, code: "RT4", date: "11/10/2024", status: "rejected" },
+                { attempt: 6, code: "RT3", date: "12/10/2024", status: "success" },
         ];
 
         const { pathname } = useLocation();
@@ -106,13 +106,13 @@ export default function TopUp({ qrImage, bankInfo }) {
                 <div className="topup">
                         {/* Tabs (simple) */}
                         <div className="topup__tabs">
-                                <NavLink to=".." end relative="path" className="trxn__tab">
+                                <NavLink className="trxn__tab" end relative="path" to="..">
                                         Lịch sử giao dịch
                                 </NavLink>
-                                <NavLink to="../topup" relative="path" className="trxn__tab">
+                                <NavLink className="trxn__tab" relative="path" to="../topup">
                                         Nạp tiền
                                 </NavLink>
-                                <NavLink to="../withdraw" relative="path" className="trxn__tab">
+                                <NavLink className="trxn__tab" relative="path" to="../withdraw">
                                         Rút tiền
                                 </NavLink>
                                 {/* <button className="topup__tab" disabled>Quá trình học</button> */}
@@ -136,14 +136,14 @@ export default function TopUp({ qrImage, bankInfo }) {
                                 <div className="topup__method-type">
                                         <span>Chọn phương thức nạp</span>
                                         <NavLink
-                                                to="."
                                                 className={`topup__radio ${!isEW ? "topup__radio--active" : ""}`}
+                                                to="."
                                         >
                                                 Ngân hàng
                                         </NavLink>
                                         <NavLink
-                                                to="../ewallet"
                                                 className={`topup__radio ${isEW ? "topup__radio--active" : ""}`}
+                                                to="../ewallet"
                                         >
                                                 Ví điện tử
                                         </NavLink>
@@ -170,9 +170,9 @@ export default function TopUp({ qrImage, bankInfo }) {
                                                 <CopyInput label="Số tài khoản:" value={bank.account} />
                                                 <CopyInput label="Chủ tài khoản:" value={bank.holder} />
                                                 <CopyInput
+                                                        editable
                                                         label="Nội dung chuyển tiền:"
                                                         value={`${bank.holder} - ${userId} - ${username}`}
-                                                        editable
                                                 />
 
                                                 <div className="topup__actions">
@@ -189,7 +189,7 @@ export default function TopUp({ qrImage, bankInfo }) {
 
                                         {/* Right QR mini card */}
                                         <aside className="topup__qr-mini">
-                                                <img src={qrSrc} alt="VietQR" />
+                                                <img alt="VietQR" src={qrSrc} />
                                                 <div className="topup__qr-mini-meta">
                                                         <div>
                                                                 <strong>Ngân hàng thụ hưởng</strong>

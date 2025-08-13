@@ -26,19 +26,19 @@ export default function ContactHero() {
 
                                         <form className="chero__form" onSubmit={(e) => e.preventDefault()}>
                                                 <div className="chero__row">
-                                                        <input type="text" placeholder="Họ tên" required />
-                                                        <input type="email" placeholder="Email" />
+                                                        <input placeholder="Họ tên" required type="text" />
+                                                        <input placeholder="Email" type="email" />
                                                 </div>
-                                                <input type="tel" placeholder="Số điện thoại" required />
-                                                <select name="service" defaultValue="" required>
-                                                        <option value="" disabled hidden>
+                                                <input placeholder="Số điện thoại" required type="tel" />
+                                                <select defaultValue="" name="service" required>
+                                                        <option disabled hidden value="">
                                                                 Chọn dịch vụ
                                                         </option>
                                                         <option value="math">Toán</option>
                                                         <option value="english">Tiếng Anh</option>
                                                         <option value="science">Khoa học</option>
                                                 </select>
-                                                <textarea rows="4" placeholder="Nội dung tin nhắn"></textarea>
+                                                <textarea placeholder="Nội dung tin nhắn" rows="4"></textarea>
                                                 <button className="chero__btn" type="submit">
                                                         Đăng ký tư vấn
                                                 </button>

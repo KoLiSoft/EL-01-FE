@@ -24,7 +24,7 @@ export default function Service() {
                         </div>
 
                         {/* RIGHT: danh sách gia sư */}
-                        <TutorResults items={items} inLayout />
+                        <TutorResults inLayout items={items} />
                 </div>
         );
 }

@@ -19,7 +19,7 @@ export default function TeacherCard({
                 <div className="tc-card">
                         {/* Header */}
                         <div className="tc-header">
-                                <img src={avatar} alt={name} className="tc-avatar" />
+                                <img alt={name} className="tc-avatar" src={avatar} />
                                 <div className="tc-headInfo">
                                         <div className="tc-name">{name}</div>
                                         <div className="tc-online">{online}</div>
@@ -59,7 +59,7 @@ export default function TeacherCard({
                                 <div className="tc-value tc-italic">{subject}</div>
                                 <div className="tc-right tc-tags">
                                         {tags.map((t, i) => (
-                                                <span key={i} className={`tc-tag ${/^\+/.test(t) ? "is-more" : ""}`}>
+                                                <span className={`tc-tag ${/^\+/.test(t) ? "is-more" : ""}`} key={i}>
                                                         {t}
                                                 </span>
                                         ))}

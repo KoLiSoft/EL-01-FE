@@ -19,10 +19,10 @@ export default function SupportModal({ open, onClose, items = [], title = "Trợ
         if (!open) return null;
 
         return (
-                <div className="helpdlg" role="dialog" aria-modal="true" aria-labelledby="helpdlg-title">
+                <div aria-labelledby="helpdlg-title" aria-modal="true" className="helpdlg" role="dialog">
                         <div className="helpdlg__overlay" onClick={onClose} />
                         <div className="helpdlg__panel">
-                                <button className="helpdlg__close" aria-label="Đóng" onClick={onClose}>
+                                <button aria-label="Đóng" className="helpdlg__close" onClick={onClose}>
                                         ×
                                 </button>
 
@@ -32,7 +32,7 @@ export default function SupportModal({ open, onClose, items = [], title = "Trợ
 
                                 <ul className="helpdlg__list">
                                         {items.map((it, i) => (
-                                                <li key={i} className="helpdlg__item">
+                                                <li className="helpdlg__item" key={i}>
                                                         <div className="helpdlg__row">
                                                                 <div className="helpdlg__badge">
                                                                         <div className="helpdlg__badge-top">Mã</div>

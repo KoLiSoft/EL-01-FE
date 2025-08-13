@@ -11,7 +11,7 @@ function Card({ avatar, name, role, subtitle, text }) {
         return (
                 <article className="ts-card">
                         <header className="ts-header">
-                                <img className="ts-avatar" src={avatar} alt={name} />
+                                <img alt={name} className="ts-avatar" src={avatar} />
                                 <div className="ts-headInfo">
                                         <div className="ts-name">{name}</div>
                                         <div className="ts-role">{role}</div>
@@ -86,8 +86,8 @@ export default function Testimonials({ items = [] }) {
                         <div className="ts-dots">
                                 {slides.map((_, i) => (
                                         <button
-                                                key={i}
                                                 className={`ts-dot ${i === page ? "is-active" : ""}`}
+                                                key={i}
                                                 onClick={() => go(i)}
                                         />
                                 ))}

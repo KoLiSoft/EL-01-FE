@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "../style/withdraw.css";
 import React from "react";
+
 function HelpDrop({ items = [], onClose }) {
         const ref = React.useRef(null);
 
@@ -14,7 +15,7 @@ function HelpDrop({ items = [], onClose }) {
         }, [onClose]);
 
         return (
-                <div ref={ref} className="helpdrop" role="dialog" aria-label="Trợ giúp nạp tiền">
+                <div aria-label="Trợ giúp nạp tiền" className="helpdrop" ref={ref} role="dialog">
                         <div className="helpdrop__head">
                                 <span>Trợ giúp chưa nhận được tiền nạp về</span>
                                 <button className="helpdrop__close" onClick={onClose}>
@@ -24,7 +25,7 @@ function HelpDrop({ items = [], onClose }) {
 
                         <ul className="helpdrop__list">
                                 {items.map((it, i) => (
-                                        <li key={i} className="helpdrop__item">
+                                        <li className="helpdrop__item" key={i}>
                                                 <div className="helpdrop__badge">
                                                         <div className="helpdrop__badge-top">Mã</div>
                                                         <div className="helpdrop__badge-code">{it.code}</div>
@@ -54,107 +55,107 @@ function HelpDrop({ items = [], onClose }) {
 export default function Withdraw() {
         const [openHelp, setOpenHelp] = React.useState(false);
         const helpItems = [
-                { code: "RT5", attempt: 6, date: "13/10/2024", status: "pending" },
-                { code: "RT4", attempt: 6, date: "11/10/2024", status: "rejected" },
-                { code: "RT3", attempt: 6, date: "12/10/2024", status: "success" },
+                { attempt: 6, code: "RT5", date: "13/10/2024", status: "pending" },
+                { attempt: 6, code: "RT4", date: "11/10/2024", status: "rejected" },
+                { attempt: 6, code: "RT3", date: "12/10/2024", status: "success" },
         ];
         const BANKS_VN = [
                 {
                         code: "VCB",
-                        name: "Vietcombank",
                         full: "Ngân hàng TMCP Ngoại thương Việt Nam",
+                        name: "Vietcombank",
                 },
                 {
                         code: "BIDV",
-                        name: "BIDV",
                         full: "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam",
+                        name: "BIDV",
                 },
                 {
                         code: "CTG",
-                        name: "VietinBank",
                         full: "Ngân hàng TMCP Công thương Việt Nam",
+                        name: "VietinBank",
                 },
-                { code: "ACB", name: "ACB", full: "Ngân hàng TMCP Á Châu" },
+                { code: "ACB", full: "Ngân hàng TMCP Á Châu", name: "ACB" },
                 {
                         code: "TCB",
-                        name: "Techcombank",
                         full: "Ngân hàng TMCP Kỹ Thương Việt Nam",
+                        name: "Techcombank",
                 },
                 {
                         code: "STB",
-                        name: "Sacombank",
                         full: "Ngân hàng TMCP Sài Gòn Thương Tín",
+                        name: "Sacombank",
                 },
-                { code: "MBB", name: "MB Bank", full: "Ngân hàng TMCP Quân đội" },
+                { code: "MBB", full: "Ngân hàng TMCP Quân đội", name: "MB Bank" },
                 {
                         code: "VPB",
-                        name: "VPBank",
                         full: "Ngân hàng TMCP Việt Nam Thịnh Vượng",
+                        name: "VPBank",
                 },
                 {
                         code: "AGR",
-                        name: "Agribank",
                         full: "Ngân hàng Nông nghiệp và PTNT Việt Nam",
+                        name: "Agribank",
                 },
-                { code: "TPB", name: "TPBank", full: "Ngân hàng TMCP Tiên Phong" },
-                { code: "VIB", name: "VIB", full: "Ngân hàng TMCP Quốc tế Việt Nam" },
-                { code: "HDB", name: "HDBank", full: "Ngân hàng TMCP Phát triển TP.HCM" },
-                { code: "SHB", name: "SHB", full: "Ngân hàng TMCP Sài Gòn – Hà Nội" },
+                { code: "TPB", full: "Ngân hàng TMCP Tiên Phong", name: "TPBank" },
+                { code: "VIB", full: "Ngân hàng TMCP Quốc tế Việt Nam", name: "VIB" },
+                { code: "HDB", full: "Ngân hàng TMCP Phát triển TP.HCM", name: "HDBank" },
+                { code: "SHB", full: "Ngân hàng TMCP Sài Gòn – Hà Nội", name: "SHB" },
                 {
                         code: "EIB",
-                        name: "Eximbank",
                         full: "Ngân hàng TMCP Xuất Nhập Khẩu Việt Nam",
+                        name: "Eximbank",
                 },
-                { code: "OCB", name: "OCB", full: "Ngân hàng TMCP Phương Đông" },
-                { code: "SCB", name: "SCB", full: "Ngân hàng TMCP Sài Gòn" },
-                { code: "SEAB", name: "SeABank", full: "Ngân hàng TMCP Đông Nam Á" },
-                { code: "ABB", name: "ABBank", full: "Ngân hàng TMCP An Bình" },
-                { code: "BVB", name: "VietCapital Bank", full: "Ngân hàng TMCP Bản Việt" },
-                { code: "NAB", name: "Nam A Bank", full: "Ngân hàng TMCP Nam Á" },
+                { code: "OCB", full: "Ngân hàng TMCP Phương Đông", name: "OCB" },
+                { code: "SCB", full: "Ngân hàng TMCP Sài Gòn", name: "SCB" },
+                { code: "SEAB", full: "Ngân hàng TMCP Đông Nam Á", name: "SeABank" },
+                { code: "ABB", full: "Ngân hàng TMCP An Bình", name: "ABBank" },
+                { code: "BVB", full: "Ngân hàng TMCP Bản Việt", name: "VietCapital Bank" },
+                { code: "NAB", full: "Ngân hàng TMCP Nam Á", name: "Nam A Bank" },
                 {
                         code: "PVCB",
-                        name: "PVcomBank",
                         full: "Ngân hàng TMCP Đại Chúng Việt Nam",
+                        name: "PVcomBank",
                 },
-                { code: "BAB", name: "Bac A Bank", full: "Ngân hàng TMCP Bắc Á" },
-                { code: "KLB", name: "KienlongBank", full: "Ngân hàng TMCP Kiên Long" },
+                { code: "BAB", full: "Ngân hàng TMCP Bắc Á", name: "Bac A Bank" },
+                { code: "KLB", full: "Ngân hàng TMCP Kiên Long", name: "KienlongBank" },
                 {
                         code: "SGB",
-                        name: "SaigonBank",
                         full: "Ngân hàng TMCP Sài Gòn Công Thương",
+                        name: "SaigonBank",
                 },
-                { code: "MSB", name: "MSB", full: "Ngân hàng TMCP Hàng Hải Việt Nam" },
-                { code: "LPB", name: "LPBank", full: "Ngân hàng TMCP Bưu điện Liên Việt" },
+                { code: "MSB", full: "Ngân hàng TMCP Hàng Hải Việt Nam", name: "MSB" },
+                { code: "LPB", full: "Ngân hàng TMCP Bưu điện Liên Việt", name: "LPBank" },
                 {
                         code: "VBB",
-                        name: "VietBank",
                         full: "Ngân hàng TMCP Việt Nam Thương Tín",
+                        name: "VietBank",
                 },
-                { code: "NCB", name: "NCB", full: "Ngân hàng TMCP Quốc Dân" },
-                { code: "PGB", name: "PGBank", full: "Ngân hàng TMCP Xăng dầu Petrolimex" },
-                { code: "BVBank", name: "BaoViet Bank", full: "Ngân hàng TMCP Bảo Việt" },
+                { code: "NCB", full: "Ngân hàng TMCP Quốc Dân", name: "NCB" },
+                { code: "PGB", full: "Ngân hàng TMCP Xăng dầu Petrolimex", name: "PGBank" },
+                { code: "BVBank", full: "Ngân hàng TMCP Bảo Việt", name: "BaoViet Bank" },
                 {
                         code: "Ocean",
-                        name: "OceanBank",
                         full: "Ngân hàng TM TNHH MTV Đại Dương",
+                        name: "OceanBank",
                 },
                 {
                         code: "GPB",
-                        name: "GPBank",
                         full: "Ngân hàng TM TNHH MTV Dầu Khí Toàn Cầu",
+                        name: "GPBank",
                 },
         ];
         return (
                 <div className="wd">
                         {/* Tabs */}
                         <div className="wd__tabs">
-                                <NavLink to=".." end relative="path" className="trxn__tab">
+                                <NavLink className="trxn__tab" end relative="path" to="..">
                                         Lịch sử giao dịch
                                 </NavLink>
-                                <NavLink to="../topup" relative="path" className="trxn__tab">
+                                <NavLink className="trxn__tab" relative="path" to="../topup">
                                         Nạp tiền
                                 </NavLink>
-                                <NavLink to="../withdraw" relative="path" className="trxn__tab">
+                                <NavLink className="trxn__tab" relative="path" to="../withdraw">
                                         Rút tiền
                                 </NavLink>
                                 {/* <button className="wd__tab" disabled>Quá trình học</button> */}

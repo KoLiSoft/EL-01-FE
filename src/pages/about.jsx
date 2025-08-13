@@ -28,7 +28,7 @@ export default function About() {
                                 </div>
 
                                 <div className="about-images">
-                                        <img src={img1} alt="Student 1" />
+                                        <img alt="Student 1" src={img1} />
                                 </div>
                         </section>
                         <div className="about-bg">
@@ -216,7 +216,7 @@ export default function About() {
                                                 viên.
                                         </p>
                                         <div className="moments-gallery">
-                                                <img src={img2} alt="Những khoảnh khắc học tập" />
+                                                <img alt="Những khoảnh khắc học tập" src={img2} />
                                         </div>
 
                                         <div className="moments-btn">

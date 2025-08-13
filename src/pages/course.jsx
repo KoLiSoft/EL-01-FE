@@ -21,7 +21,7 @@ export default function Course() {
                                 </div>
 
                                 <div className="hero-right-course">
-                                        <img src="/img/Group 1.png" alt="Học sinh" />
+                                        <img alt="Học sinh" src="/img/Group 1.png" />
                                 </div>
                         </section>
                         <section className="course-card__actions">

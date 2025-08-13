@@ -6,7 +6,7 @@ function Footer() {
                         <footer className="footer">
                                 <div className="footer-container">
                                         <div className="footer-logo">
-                                                <img src="/logo.svg" alt="Edulinktutor Logo" />
+                                                <img alt="Edulinktutor Logo" src="/logo.svg" />
                                         </div>
 
                                         <div className="footer-columns">
@@ -78,7 +78,7 @@ function Footer() {
                                                 </p>
                                                 <form className="subscribe-form">
                                                         <label>Đăng ký nhận tin nhắn mới nhất từ EDULINKTUTOR</label>
-                                                        <input type="email" placeholder="Nhập email của bạn" />
+                                                        <input placeholder="Nhập email của bạn" type="email" />
                                                         <button type="submit">Gửi</button>
                                                 </form>
                                         </div>
@@ -91,24 +91,24 @@ function Footer() {
                                         <div className="footer-bottom-right social-icons">
                                                 <a
                                                         href="https://www.facebook.com/edulinktutor"
-                                                        target="_blank"
                                                         rel="noopener noreferrer"
+                                                        target="_blank"
                                                 >
-                                                        <img src="/fb.svg" alt="Facebook" />
+                                                        <img alt="Facebook" src="/fb.svg" />
                                                 </a>
                                                 <a
                                                         href="https://www.linkedin.com/company/edulinktutor"
-                                                        target="_blank"
                                                         rel="noopener noreferrer"
+                                                        target="_blank"
                                                 >
-                                                        <img src="/linkedin.svg" alt="LinkedIn" />
+                                                        <img alt="LinkedIn" src="/linkedin.svg" />
                                                 </a>
                                                 <a
                                                         href="https://www.tiktok.com/@edulinktutor"
-                                                        target="_blank"
                                                         rel="noopener noreferrer"
+                                                        target="_blank"
                                                 >
-                                                        <img src="/tiktok.svg" alt="TikTok" />
+                                                        <img alt="TikTok" src="/tiktok.svg" />
                                                 </a>
                                         </div>
                                 </div>
