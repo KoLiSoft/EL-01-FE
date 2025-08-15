@@ -269,11 +269,11 @@ body {
 /* No results message */
 .trxn__no-results {
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         padding: 40px 20px;
-        text-align: center;
         color: var(--muted);
+        text-align: center;
 }
 .trxn__no-results p {
         margin: 0;
