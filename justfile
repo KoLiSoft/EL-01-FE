@@ -12,4 +12,3 @@ lint:
         bunx biome format --write src/
         @echo 'Checking code...'
         bunx biome check --write --unsafe .
-

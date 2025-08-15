@@ -42,3 +42,12 @@ export const getWallet = async () => {
         const response = await apiClient.get("/wallets/me");
         return response;
 };
+
+/**
+ * Get my transactions API
+ * @returns {Promise<AxiosResponse>}
+ */
+export const getTransactions = async () => {
+        const response = await apiClient.get("/wallets/me/transactions");
+        return response;
+};

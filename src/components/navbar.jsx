@@ -70,6 +70,7 @@ export default function Navbar() {
                                                 ) : (
                                                         <Login
                                                                 onForgotPassword={() => setIsForgotPassword(true)}
+                                                                onLoginSuccess={() => setIsOpenTeacher(false)}
                                                                 onRegisterClick={() => {
                                                                         setIsOpenTeacher(false);
                                                                         setIsOpenStd(true);

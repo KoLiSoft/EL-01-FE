@@ -266,6 +266,21 @@ body {
         background: #eaf7f0;
 }
 
+/* No results message */
+.trxn__no-results {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        text-align: center;
+        color: var(--muted);
+}
+.trxn__no-results p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.5;
+}
+
 /* Responsive */
 @media (max-width: 1100px) {
         .trxn__chart {

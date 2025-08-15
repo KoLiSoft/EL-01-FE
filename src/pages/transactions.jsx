@@ -1,20 +1,49 @@
 import { useEffect, useState } from "react";
 import "../style/transactions.css";
 import { NavLink } from "react-router-dom";
-import { getWallet } from "../hooks/auth.hooks.js";
+import { getTransactions, getWallet } from "../hooks/auth.hooks.js";
 import { config } from "../lib/config.js";
 
 export default function Transactions() {
         const [wallet, setWallet] = useState(null);
+        const [transactions, setTransactions] = useState([]);
+        const [searchTerm, setSearchTerm] = useState("");
+        const [filteredTransactions, setFilteredTransactions] = useState([]);
+
         useEffect(() => {
                 const fetchWallet = async () => {
                         const response = await getWallet();
                         setWallet(response.data);
                 };
+                const fetchTransactions = async () => {
+                        const response = await getTransactions();
+                        setTransactions(response.data.transactions || []);
+                };
                 fetchWallet();
+                fetchTransactions();
         }, []);
 
-        if (!wallet) {
+        useEffect(() => {
+                if (transactions.length > 0) {
+                        const filtered = transactions.filter((transaction) => {
+                                const searchLower = searchTerm.toLowerCase();
+                                const description = transaction.description?.toLowerCase() || "";
+                                const amount = transaction.amount?.toString() || "";
+                                const status = transaction.status?.toLowerCase() || "";
+
+                                return (
+                                        description.includes(searchLower) ||
+                                        amount.includes(searchLower) ||
+                                        status.includes(searchLower)
+                                );
+                        });
+                        setFilteredTransactions(filtered);
+                } else {
+                        setFilteredTransactions([]);
+                }
+        }, [transactions, searchTerm]);
+
+        if (!wallet || !Array.isArray(transactions)) {
                 return <div>Loading...</div>;
         }
 
@@ -82,7 +111,12 @@ export default function Transactions() {
 
                         {/* Filters */}
                         <div className="trxn__filters">
-                                <input className="trxn__search" placeholder="Nhập tên dịch vụ, số tiền" />
+                                <input
+                                        className="trxn__search"
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                        placeholder="Nhập tên dịch vụ, số tiền"
+                                        value={searchTerm}
+                                />
                                 <div className="trxn__filter-actions">
                                         <button className="trxn__filter">Lọc thêm ▾</button>
                                 </div>
@@ -98,22 +132,35 @@ export default function Transactions() {
 
                         {/* Transactions list */}
                         <div className="trxn__list">
-                                <div className="trxn__item">
-                                        <div className="trxn__cell trxn__title">Yêu cầu rút tiền RT1-ND4567</div>
-                                        <div className="trxn__cell">09:09:45 15-10-2024</div>
-                                        <div className="trxn__cell trxn__money trxn__money--out">-3.000.000 VND</div>
-                                        <div className="trxn__cell">
-                                                <span className="trxn__status trxn__status--success">Thành công</span>
+                                {filteredTransactions.length > 0 ? (
+                                        filteredTransactions.map((transaction) => (
+                                                <div className="trxn__item" key={transaction.id}>
+                                                        <div className="trxn__cell trxn__title">
+                                                                {transaction.description}
+                                                        </div>
+                                                        <div className="trxn__cell">{transaction.createdAt}</div>
+                                                        <div className="trxn__cell trxn__money trxn__money--out">
+                                                                {transaction.amount.toLocaleString(config.locale, {
+                                                                        currency: config.currency,
+                                                                        style: "currency",
+                                                                })}
+                                                        </div>
+                                                        <div className="trxn__cell">
+                                                                <span className="trxn__status trxn__status--success">
+                                                                        {transaction.status}
+                                                                </span>
+                                                        </div>
+                                                </div>
+                                        ))
+                                ) : searchTerm ? (
+                                        <div className="trxn__no-results">
+                                                <p>Không tìm thấy giao dịch nào phù hợp với "{searchTerm}"</p>
                                         </div>
-                                </div>
-                                <div className="trxn__item">
-                                        <div className="trxn__cell trxn__title">Yêu cầu nạp tiền NT3-ND4567</div>
-                                        <div className="trxn__cell">07:09:00 03-09-2024</div>
-                                        <div className="trxn__cell trxn__money trxn__money--in">+10.000.000 VND</div>
-                                        <div className="trxn__cell">
-                                                <span className="trxn__status trxn__status--success">Thành công</span>
+                                ) : (
+                                        <div className="trxn__no-results">
+                                                <p>Không có giao dịch nào</p>
                                         </div>
-                                </div>
+                                )}
                         </div>
                 </div>
         );

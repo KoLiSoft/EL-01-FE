@@ -56,7 +56,7 @@ function HelpDrop({ items = [], onClose }) {
                         <div className="helpdrop__head">
                                 <span>Trợ giúp chưa nhận được tiền nạp về</span>
                                 <button className="helpdrop__close" onClick={onClose}>
-                                        ×
+                                        x
                                 </button>
                         </div>
 

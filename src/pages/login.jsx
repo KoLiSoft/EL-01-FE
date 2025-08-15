@@ -4,8 +4,10 @@ import googleIcon from "../assets/img/gg.svg";
 import { login } from "../hooks/auth.hooks.js";
 import "../style/login.css";
 import { useNavigate } from "react-router-dom";
+import { loginSchema } from "../lib/validation-schemas.js";
+import { clearValidationErrors, validateFormData } from "../lib/validation-utils.js";
 
-export default function Login({ onForgotPassword, onRegisterClick }) {
+export default function Login({ onForgotPassword, onRegisterClick, onLoginSuccess }) {
         const [showPassword, setShowPassword] = useState(false);
         const [isGoogleReady, setIsGoogleReady] = useState(false);
         const [formData, setFormData] = useState({
@@ -15,6 +17,7 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
         const [isLoading, setIsLoading] = useState(false);
         const [error, setError] = useState("");
         const [success, setSuccess] = useState("");
+        const [validationErrors, setValidationErrors] = useState({});
         const codeClientRef = useRef(null);
         const navigate = useNavigate();
 
@@ -51,6 +54,7 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                         [name]: type === "checkbox" ? checked : value,
                 }));
                 setError("");
+                clearValidationErrors(setValidationErrors, name);
         };
 
         const handleGoogleLogin = () => {
@@ -60,8 +64,10 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
         const handleSubmit = async (e) => {
                 e.preventDefault();
 
-                if (!formData.email || !formData.password) {
-                        setError("Vui lòng nhập đầy đủ email và mật khẩu");
+                const validation = validateFormData(loginSchema, formData);
+
+                if (!validation.success) {
+                        setValidationErrors(validation.errors);
                         return;
                 }
 
@@ -70,13 +76,16 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                 setSuccess("");
 
                 try {
-                        const response = await login(formData.email, formData.password);
+                        const response = await login(validation.data.email, validation.data.password);
 
                         if (response) {
                                 setSuccess("Đăng nhập thành công!");
                                 localStorage.setItem("token", response.token);
                                 navigate("/profile-std");
-                                // hide this page
+
+                                if (onLoginSuccess) {
+                                        onLoginSuccess();
+                                }
 
                                 return;
                         }
@@ -146,7 +155,9 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                                         </div>
 
                                         <form className="login-form" onSubmit={handleSubmit}>
-                                                <label className="input-group">
+                                                <label
+                                                        className={`input-group ${validationErrors.email ? "error" : ""}`}
+                                                >
                                                         <EnvelopeIcon alt="" className="input-icon" />
                                                         <input
                                                                 disabled={isLoading}
@@ -157,8 +168,13 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                                                                 value={formData.email}
                                                         />
                                                 </label>
+                                                {validationErrors.email && (
+                                                        <div className="validation-error">{validationErrors.email}</div>
+                                                )}
 
-                                                <label className="input-group">
+                                                <label
+                                                        className={`input-group ${validationErrors.password ? "error" : ""}`}
+                                                >
                                                         <LockIcon alt="" className="input-icon" />
                                                         <input
                                                                 disabled={isLoading}
@@ -186,6 +202,11 @@ export default function Login({ onForgotPassword, onRegisterClick }) {
                                                                 />
                                                         )}
                                                 </label>
+                                                {validationErrors.password && (
+                                                        <div className="validation-error">
+                                                                {validationErrors.password}
+                                                        </div>
+                                                )}
 
                                                 <button className="submit-btn" disabled={isLoading} type="submit">
                                                         {isLoading ? "Đang đăng nhập..." : "Đăng nhập"}
